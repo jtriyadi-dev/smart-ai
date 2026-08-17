@@ -1,0 +1,6 @@
+{
+  "name": "SMART-AI.ID",
+  "description": "SMART-AI.ID - Perusahaan & Layanan Pengembang Aplikasi Web Custom Berbasis Artificial Intelligence (AI), Sistem Informasi Enterprise, & Digital Transformation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
