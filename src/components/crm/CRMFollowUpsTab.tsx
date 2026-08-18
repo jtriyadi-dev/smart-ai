@@ -195,7 +195,7 @@ export const CRMFollowUpsTab: React.FC<CRMFollowUpsTabProps> = ({
 
               <div className="flex items-center space-x-2 shrink-0">
                 <button
-                  onClick={() => onWhatsAppClick('+6281234567890', fol.contactName || 'Klien', fol.task)}
+                  onClick={() => onWhatsAppClick('+6285187869164', fol.contactName || 'Klien', fol.task)}
                   className="px-3 py-1.5 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-xl flex items-center space-x-1"
                 >
                   <MessageCircle className="w-3.5 h-3.5" />

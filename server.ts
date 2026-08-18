@@ -307,7 +307,7 @@ app.post('/api/leads', (req, res) => {
       `Mohon dihubungi kembali untuk jadwal konsultasi teknis. Terima kasih!`
     );
 
-    const whatsappUrl = `https://wa.me/6281234567890?text=${waText}`;
+    const whatsappUrl = `https://wa.me/6285187869164?text=${waText}`;
 
     return res.json({
       success: true,

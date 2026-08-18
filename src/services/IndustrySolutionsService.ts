@@ -1872,6 +1872,147 @@ export const INITIAL_INDUSTRY_SOLUTIONS: IndustrySolutionConfig[] = [
     ],
     relatedSlugs: ['mining', 'hospital', 'manufacturing'],
     cta: { buildText: 'Bangun Platform Enterprise', consultText: 'Konsultasi Enterprise ERP', estimateText: 'Hitung Estimasi Enterprise' }
+  },
+
+  // 20. TRAVEL HAJI & UMROH
+  {
+    slug: 'travel-haji-umroh',
+    name: 'Travel Haji & Umroh',
+    subtitle: 'Platform Manajemen Travel Haji, Umroh, Manifest Jamaah & Keuangan Terintegrasi AI',
+    category: 'Travel & Umroh',
+    isFeatured: true,
+    published: true,
+    icon: '🕋',
+    heroTagline: 'Sistem Terpadu Biro Travel Haji & Umroh Berbasis AI & Siskopatuh Ready',
+    heroDescription:
+      'Kelola seluruh alur operasional biro haji & umroh: Pendaftaran online, AI OCR scan paspor/KTP, manifest tiket penerbangan, visa Nusuk/Muassasah, pembagian kamar hotel Makkah/Madinah, pembayaran cicilan, hingga AI asisten manasik jamaah di tanah suci.',
+    metaTitle: 'Software Manajemen Travel Haji & Umroh Berbasis AI | SMART-AI.ID',
+    metaDescription:
+      'Solusi software biro perjalanan Haji Khusus dan Umroh terintegrasi: OCR Paspor, Manifest Maskapai, Rooming Hotel, Sistem Cicilan Tabungan, dan AI Asisten Manasik.',
+    problems: [
+      {
+        id: 'tp1',
+        title: 'Input Data Paspor & Dokumen Jamaah Lambat & Rawan Typo',
+        description: 'Ribuan paspor dan KTP jamaah harus diketik manual oleh staf, memicu kesalahan fatal pada pengajuan visa atau tiket maskapai.',
+        impact: 'Visa ditolak (reject), biaya perbaikan nama tiket mahal, dan jamaah terlambat berangkat.',
+        solutionHighlight: 'AI OCR otomatis membaca foto paspor/KTP dalam 2 detik dengan akurasi 99.8%.'
+      },
+      {
+        id: 'tp2',
+        title: 'Pembagian Kamar Hotel (Rooming List) Makkah/Madinah Rumit',
+        description: 'Menyusun pembagian kamar Quad, Triple, Double yang harus memisahkan ikhwan/akhwat dan menyatukan mahram keluarga memakan waktu berhari-hari.',
+        impact: 'Komplain jamaah saat check-in hotel dan denda kamar kosong (empty bed charge) dari pihak hotel.',
+        solutionHighlight: 'Smart Auto-Rooming Engine yang mengalokasikan kamar secara otomatis berdasarkan aturan mahram & tipe paket.'
+      },
+      {
+        id: 'tp3',
+        title: 'Pelacakan Pembayaran Cicilan & Rekonsiliasi Tabungan Jamaah',
+        description: 'Sulit melacak jamaah yang belum lunas, pelunasan bertahap, dan komisi agen/cabang travel yang masih dicatat spreadsheet manual.',
+        impact: 'Kebocoran arus kas dan sengketa komisi agen pemasaran travel.',
+        solutionHighlight: 'Billing otomatis dengan Virtual Account, invoice WhatsApp bertahap, dan kalkulator komisi agen real-time.'
+      },
+      {
+        id: 'tp4',
+        title: 'Mutawwif Kerepotan Menjawab Pertanyaan Berulang & Koordinasi Lapangan',
+        description: 'Di tanah suci, pembimbing ibadah (mutawwif) harus menjawab pertanyaan tata cara ibadah dan rute kumpul berulang-ulang dari puluhan jamaah.',
+        impact: 'Jamaah tersesat di sekitar Masjidil Haram atau terlewat jadwal ziarah/manasik.',
+        solutionHighlight: 'AI Asisten Mutawwif & Tanya Jawab Manasik 24/7 di aplikasi mobile jamaah.'
+      }
+    ],
+    solutionOverview:
+      'Platform Travel Haji & Umroh SMART-AI.ID menggabungkan CRM jamaah, OCR paspor, manifest penerbangan, manifest rooming hotel, pembayaran cicilan, dan mobile companion jamaah dalam satu sistem terintegrasi.',
+    businessImpactSummary: [
+      'Proses Input & Verifikasi Berkas Jamaah 4x Lebih Cepat',
+      'Penyusunan Rooming List Hotel Selesai dalam Hitungan Menit',
+      'Zero Error Manifest Tiket Pesawat & Visa Kemenag/Nusuk',
+      'Kepuasan & Ketenangan Jamaah Meningkat Signifikan'
+    ],
+    modules: [
+      { id: 'tm1', name: 'Manajemen Paket & Kuota Keberangkatan', description: 'Atur paket Umroh Reguler/VIP/Plus dan Haji Khusus, kuota seat, dan tanggal flight.', iconName: 'Calendar', aiBadge: 'Smart Quota' },
+      { id: 'tm2', name: 'Registrasi Jamaah & AI OCR Paspor', description: 'Ekstraksi otomatis foto paspor/KTP, data mahram, rekam kesehatan, dan riwayat vaksin.', iconName: 'ScanLine', aiBadge: 'Vision AI' },
+      { id: 'tm3', name: 'Manifest Penerbangan & Tracking Visa', description: 'Manajemen PNR tiket grup, penerbitan visa Muassasah/Nusuk, dan manifest bus bandara.', iconName: 'Plane' },
+      { id: 'tm4', name: 'Smart Hotel Rooming Engine', description: 'Alokasi otomatis kamar hotel Makkah & Madinah (Quad, Triple, Double) sesuai mahram.', iconName: 'Hotel', aiBadge: 'Auto Allocate' },
+      { id: 'tm5', name: 'Billing, Cicilan & Komisi Agen Travel', description: 'Penerbitan invoice DP, simulasi cicilan biaya keberangkatan, payment gateway VA, dan komisi agen.', iconName: 'CreditCard' },
+      { id: 'tm6', name: 'Logistik Perlengkapan & Koper Jamaah', description: 'Manajemen stok seragam batik, koper, kain ihram, barcode koper, dan tracking pengiriman.', iconName: 'Package' }
+    ],
+    aiFeatures: [
+      { id: 'tf1', name: 'AI Passport & Document OCR', description: 'Ekstraksi instan data teks paspor internasional (MRZ scanner) dan e-KTP tanpa ketik manual.', iconName: 'FileText', type: 'Automation' },
+      { id: 'tf2', name: 'AI Smart Rooming Allocator', description: 'Algoritma pencocokan cerdas kamar hotel berdasarkan gender, ikatan keluarga/mahram, dan preferensi bed.', iconName: 'LayoutGrid', type: 'Recommendations' },
+      { id: 'tf3', name: 'AI Asisten Mutawwif & Panduan Manasik', description: 'Chatbot asisten AI interaktif untuk panduan doa tawaf, sai, tahallul, fikih wanita haid, dan lokasi penting.', iconName: 'Bot', type: 'Copilot' },
+      { id: 'tf4', name: 'AI Departure Trend & Seat Forecasting', description: 'Prediksi tren permintaan musim umroh (Ramadhan/Awal Musim) dan rekomendasi harga paket optimal.', iconName: 'TrendingUp', type: 'Forecasting' }
+    ],
+    workflowSteps: [
+      { step: 1, title: 'Pemilihan Paket & Upload Dokumen', desc: 'Jamaah/agen mendaftar via web/mobile dan upload foto paspor & KTP.', icon: 'Smartphone' },
+      { step: 2, title: 'Ekstraksi AI & Validasi Berkas', desc: 'AI OCR mengekstrak identitas paspor dan mengecek masa berlaku > 6 bulan.', icon: 'ScanLine' },
+      { step: 3, title: 'Pembayaran DP & Cicilan Otomatis', desc: 'Jamaah membayar via Virtual Account dan otomatis menerima kuitansi resmi.', icon: 'CreditCard' },
+      { step: 4, title: 'Penerbitan Tiket, Visa & Rooming', desc: 'Admin memproses PNR tiket, visa Muassasah, dan auto-generate rooming hotel.', icon: 'CheckCircle2' },
+      { step: 5, title: 'Pendampingan Jamaah di Tanah Suci', desc: 'Jamaah menggunakan aplikasi mobile untuk jadwal harian dan AI panduan manasik.', icon: 'Sparkles' }
+    ],
+    dashboardPreview: {
+      kpis: [
+        { label: 'Total Jamaah Musim Ini', value: '1.450 Jamaah', change: '+28,5%', isPositive: true, subtext: '12 Grup Keberangkatan' },
+        { label: 'Status Visa Terbit', value: '98,2%', change: '+4,1%', isPositive: true, subtext: 'Tersisa 26 proses kedutaan' },
+        { label: 'Total Pendapatan Paket', value: 'Rp 41,2 Miliar', change: '+32,0%', isPositive: true, subtext: 'Target Rp 38 Miliar' },
+        { label: 'Tingkat Pelunasan Tagihan', value: '94,6%', change: '+5,2%', isPositive: true, subtext: 'Auto Reminder WA Aktif' }
+      ],
+      chartTitle: 'Tren Keberangkatan Jamaah per Bulan (Musim Umroh 1447H)',
+      chartData: [
+        { name: 'Muh', actual: 120, target: 100 },
+        { name: 'Saf', actual: 180, target: 150 },
+        { name: 'Rab', actual: 240, target: 200 },
+        { name: 'Jum', actual: 310, target: 250 },
+        { name: 'Raj', actual: 280, target: 250 },
+        { name: 'Sya', actual: 320, target: 300 }
+      ],
+      tableTitle: 'Status Manifest & Rombongan Keberangkatan Terdekat',
+      tableHeaders: ['Kode Paket', 'Nama Paket Umroh', 'Tanggal Terbang', 'Seat Terisi', 'Status Visa', 'Status Rooming'],
+      tableRows: [
+        { 'Kode Paket': 'UMR-VIP-101', 'Nama Paket Umroh': 'Umroh VIP Bintang 5 Awal Musim (9 Hari)', 'Tanggal Terbang': '24 Nov 2026', 'Seat Terisi': '45 / 45 (Full)', 'Status Visa': '100% Issued', 'Status Rooming': 'Selesai (AI Matched)' },
+        { 'Kode Paket': 'UMR-REG-204', 'Nama Paket Umroh': 'Umroh Reguler Plus Turki (12 Hari)', 'Tanggal Terbang': '02 Des 2026', 'Seat Terisi': '88 / 90', 'Status Visa': '82/88 Issued', 'Status Rooming': 'Draft Alokasi' },
+        { 'Kode Paket': 'HAJ-FRO-001', 'Nama Paket Umroh': 'Haji Khusus Furoda Eksklusif 1448H', 'Tanggal Terbang': '15 Jun 2027', 'Seat Terisi': '30 / 30 (Full)', 'Status Visa': 'Dokumen Lengkap', 'Status Rooming': 'Selesai (AI Matched)' }
+      ],
+      aiInsightBanner: '💡 AI Travel Insights: Paket Umroh VIP 24 Nov telah 100% teralokasikan rooming hotel tanpa single supplement berlebih. AI merekomendasikan penambahan 1 kloter di bulan Rajab karena lonjakan lead jamaah.'
+    },
+    benefits: [
+      'Menghilangkan 90% human error penulisan nama di paspor, visa, dan tiket pesawat.',
+      'Otomatisasi rooming list hotel Makkah & Madinah sesuai aturan syar\'i mahram.',
+      'Rekonsiliasi pembayaran cicilan jamaah real-time dengan integrasi Virtual Account.',
+      'Meningkatkan reputasi biro travel dengan mobile app jamaah berfitur AI Mutawwif canggih.'
+    ],
+    useCases: [
+      {
+        id: 'uct1',
+        title: 'Verifikasi Berkas Paspor 500 Jamaah Secara Massal',
+        scenario: 'Biro travel menerima 500 berkas paspor jamaah dari berbagai kantor cabang dalam waktu singkat.',
+        aiRole: 'AI OCR memindai seluruh paspor secara batch, mengekstrak data nama/nomor/expired, dan mendeteksi paspor yang masa berlakunya kurang dari 6 bulan.',
+        outcome: 'Penyusunan manifest tiket maskapai selesai dalam 2 jam tanpa satupun kesalahan ketik nama.'
+      },
+      {
+        id: 'uct2',
+        title: 'Bantuan Manasik & Jamaah Terpisah di Makkah',
+        scenario: 'Seorang jamaah lansia terpisah dari rombongan setelah shalat Isya di pelataran Masjidil Haram.',
+        aiRole: 'Aplikasi mobile jamaah mendeteksi lokasi dan memberikan rute kembali ke hotel dengan panduan audio bahasa Indonesia, sekaligus mengirimkan koordinat ke HP Mutawwif.',
+        outcome: 'Jamaah dapat dijemput oleh tim mutawwif dalam waktu kurang dari 15 menit.'
+      }
+    ],
+    integrations: [
+      'Siskopatuh Kemenag RI Integration',
+      'Nusuk & Muassasah Visa Portal API',
+      'Airline GDS / PNR Ticket Booking',
+      'Bank Syariah Indonesia (BSI) / Virtual Account Gateway',
+      'WhatsApp Business API Notification Broadcast'
+    ],
+    technologies: [
+      { category: 'Frontend', stack: ['React 18', 'Tailwind CSS', 'Mobile PWA Jamaah', 'Responsive Travel Admin'] },
+      { category: 'Backend', stack: ['Node.js', 'Express.js', 'PostgreSQL / Firestore', 'High-Concurrency Manifest Service'] },
+      { category: 'AI & Intelligence', stack: ['Gemini 2.5 Flash Multimodal', 'Passport OCR Vision Engine', 'Smart Rooming Optimizer'] }
+    ],
+    relatedSlugs: ['hotel', 'logistics', 'fleet-management', 'enterprise'],
+    cta: {
+      buildText: 'Bangun Software Travel Haji & Umroh',
+      consultText: 'Konsultasi Solusi Travel Umroh',
+      estimateText: 'Hitung Estimasi Biaya Travel'
+    }
   }
 ];
 
@@ -1880,6 +2021,17 @@ const ALIAS_MAP: Record<string, string> = {
   'ayam': 'poultry',
   'poultry-farming': 'poultry',
   'smart-poultry': 'poultry',
+  'haji': 'travel-haji-umroh',
+  'umroh': 'travel-haji-umroh',
+  'umrah': 'travel-haji-umroh',
+  'travel-haji': 'travel-haji-umroh',
+  'travel-umroh': 'travel-haji-umroh',
+  'travel-haji-umroh': 'travel-haji-umroh',
+  'biro-haji': 'travel-haji-umroh',
+  'biro-umroh': 'travel-haji-umroh',
+  'jamaah': 'travel-haji-umroh',
+  'siskopatuh': 'travel-haji-umroh',
+  'mutawwif': 'travel-haji-umroh',
   'hotel': 'hotel',
   'hospitality': 'hotel',
   'smart-hotel': 'hotel',

@@ -166,7 +166,7 @@ export class ProductionConfigService {
     {
       category: '8. WhatsApp Gateway',
       variable: 'WHATSAPP_API_ENDPOINT',
-      development: 'https://wa.me/6281234567890 (Direct Link Fallback)',
+      development: 'https://wa.me/6285187869164 (Direct Link Fallback)',
       staging: 'https://api.whatsapp-stg.provider.com/v1/messages',
       production: 'https://graph.facebook.com/v19.0/PHONE_NUMBER_ID/messages',
       isSecret: false,

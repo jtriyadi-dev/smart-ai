@@ -8,7 +8,7 @@ interface ContactCTAProps {
 export const ContactCTA: React.FC<ContactCTAProps> = ({ onOpenConsultation }) => {
   const openWhatsApp = () => {
     const text = encodeURIComponent('Halo Tim SMART-AI.ID, saya siap berkonsultasi mengenai perancangan aplikasi web custom berbasis AI untuk perusahaan kami.');
-    window.open(`https://wa.me/6281234567890?text=${text}`, '_blank');
+    window.open(`https://wa.me/6285187869164?text=${text}`, '_blank');
   };
 
   return (

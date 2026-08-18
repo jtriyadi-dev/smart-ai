@@ -1320,6 +1320,88 @@ export const INDUSTRY_SPECIFIC_FEATURE_GROUPS: IndustryFeatureGroup[] = [
         badge: 'Enterprise AI'
       }
     ]
+  },
+  {
+    industryId: 'travel_hajj_umrah',
+    industryName: 'Travel Haji & Umroh',
+    industryAliases: ['haji', 'umroh', 'umrah', 'travel haji', 'travel umroh', 'biro haji', 'jamaah', 'siskopatuh', 'mutawwif', 'manasik'],
+    category: 'Travel, Wisata & Religi',
+    iconName: 'Compass',
+    description: 'Manajemen paket haji & umroh, OCR paspor jamaah, manifest tiket/visa, rooming hotel, dan AI mutawwif assistant.',
+    recommendedPresets: [
+      'Manajemen Paket Keberangkatan & Kuota Jamaah',
+      'Registrasi Jamaah & AI OCR Paspor/KTP',
+      'Manifest Maskapai & Status Penerbitan Visa',
+      'Rooming List Hotel Makkah & Madinah Otomatis',
+      'AI Asisten Mutawwif & Tanya Jawab Manasik 24/7',
+      'Integrasi Siskopatuh Kemenag & WhatsApp Broadcast',
+      'Dashboard Eksekutif',
+      'Finance & Accounting'
+    ],
+    features: [
+      {
+        id: 'Manajemen Paket Keberangkatan & Kuota Jamaah',
+        name: 'Manajemen Paket Keberangkatan & Kuota Jamaah',
+        category: 'Industry Specific',
+        description: 'Konfigurasi paket Umroh Reguler/VIP/Plus dan Haji Khusus, kuota kursi, jadwal keberangkatan, dan harga bertingkat.',
+        isRecommended: true,
+        badge: 'Core Travel'
+      },
+      {
+        id: 'Registrasi Jamaah & AI OCR Paspor/KTP',
+        name: 'Registrasi Jamaah & AI OCR Paspor/KTP',
+        category: 'AI',
+        description: 'Pindai foto paspor dan KTP jamaah secara instan, otomatis mengekstrak nama, nomor paspor, masa berlaku tanpa ketik manual.',
+        isRecommended: true,
+        isAI: true,
+        badge: 'Vision OCR'
+      },
+      {
+        id: 'Manifest Maskapai & Status Penerbitan Visa',
+        name: 'Manifest Maskapai & Status Penerbitan Visa',
+        category: 'Industry Specific',
+        description: 'Tracking status pengajuan visa Arab Saudi (Nusuk/Muassasah), booking PNR tiket pesawat, dan manifest group jamaah.',
+        isRecommended: true,
+        badge: 'Visa & Flight'
+      },
+      {
+        id: 'Rooming List Hotel Makkah & Madinah Otomatis',
+        name: 'Rooming List Hotel Makkah & Madinah Otomatis',
+        category: 'Operations',
+        description: 'Alokasi cerdas kamar hotel Quad, Triple, Double sesuai hubungan mahram keluarga dan gender jamaah secara otomatis.',
+        isRecommended: true,
+        badge: 'Smart Rooming'
+      },
+      {
+        id: 'Manajemen Perlengkapan & Koper Jamaah',
+        name: 'Manajemen Perlengkapan & Koper Jamaah',
+        category: 'Operations',
+        description: 'Pencatatan distribusi seragam batik, koper, kain ihram, buku panduan, dan barcode tracking bagasi jamaah.'
+      },
+      {
+        id: 'Sistem Pembayaran Cicilan, Tabungan & VA',
+        name: 'Sistem Pembayaran Cicilan, Tabungan & VA',
+        category: 'Finance',
+        description: 'Penerbitan invoice DP, simulasi cicilan biaya keberangkatan, integrasi Virtual Account Bank Syariah, dan kuitansi resmi.',
+        isRecommended: true
+      },
+      {
+        id: 'AI Asisten Mutawwif & Tanya Jawab Manasik 24/7',
+        name: 'AI Asisten Mutawwif & Tanya Jawab Manasik 24/7',
+        category: 'AI',
+        description: 'Chatbot AI cerdas pemandu doa tawaf/sai, rukun ibadah, peta lokasi masjidil haram, dan jadwal briefing rombongan.',
+        isRecommended: true,
+        isAI: true,
+        badge: 'Smart Mutawwif'
+      },
+      {
+        id: 'Integrasi Siskopatuh Kemenag & WhatsApp Broadcast',
+        name: 'Integrasi Siskopatuh Kemenag & WhatsApp Broadcast',
+        category: 'Integration',
+        description: 'Sinkronisasi data pelaporan regulasi Kemenag RI dan pengiriman broadcast jadwal manasik, kumpul bandara via WhatsApp.',
+        isRecommended: true
+      }
+    ]
   }
 ];
 

@@ -875,6 +875,177 @@ export const INITIAL_PORTFOLIOS: PortfolioConfig[] = [
         { label: 'Table Turnover Rate', value: '3.2x', change: 'High Demand', trend: 'up' }
       ]
     }
+  },
+  {
+    id: 'port-travel-haji-umroh',
+    name: 'Smart Hajj & Umrah Travel',
+    slug: 'smart-hajj-umrah',
+    industry: 'Travel Haji & Umroh',
+    category: 'Travel & Umroh',
+    description: 'Sistem komando biro haji & umroh terpadu: OCR paspor otomatis, manifest penerbangan, auto-rooming hotel Makkah & Madinah, serta AI pendamping mutawwif.',
+    fullDescription: 'Smart Hajj & Umrah Platform adalah arsitektur digital menyeluruh yang dirancang untuk biro travel perjalanan haji khusus dan umroh modern. Mengotomatisasi validasi ribuan paspor & berkas visa, alokasi kamar hotel berdasarkan aturan mahram syariah, integrasi pelaporan Siskopatuh Kemenag, dan mobile app jamaah berfitur AI manasik pintar.',
+    projectType: 'Concept',
+    status: 'CONCEPT PROJECT',
+    coverImage: 'from-emerald-600/30 via-teal-900/20 to-slate-950 border-emerald-500/30',
+    relatedIndustrySlug: 'travel-haji-umroh',
+    featured: true,
+    visibility: 'PUBLIC',
+    approvalStatus: 'PUBLISHED',
+    version: 1,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+    problems: [
+      { id: 'p1', title: 'Input Manual Paspor & Manifest Rawan Salah', description: 'Ribuan data paspor diketik manual sehingga sering terjadi salah nama pada tiket pesawat dan penolakan visa.', impact: 'Denda koreksi tiket & risiko gagal terbang' },
+      { id: 'p2', title: 'Alokasi Rooming Hotel Sangat Kompleks', description: 'Menyusun pembagian kamar hotel di Makkah & Madinah dengan syarat mahram dan gender memakan waktu berhari-hari.', impact: 'Komplain jamaah saat check-in & beban biaya kamar kosong' },
+      { id: 'p3', title: 'Pelacakan Cicilan Tabungan Tidak Terintegrasi', description: 'Pembayaran bertahap dan komisi agen cabang sulit direkonsiliasi dengan rekening koran secara cepat.', impact: 'Ketidakpastian arus kas operasional biro' }
+    ],
+    solution: {
+      summary: 'Platform manajemen biro haji & umroh all-in-one dengan AI OCR Paspor, Smart Rooming Allocator, dan AI Mutawwif Companion.',
+      digitalSolution: 'Pindai paspor instan, manifest tiket dan visa otomatis, alokasi kamar hotel cerdas, Virtual Account invoice, serta aplikasi mobile jamaah.',
+      businessImpact: 'Memangkas waktu proses berkas hingga 75%, zero error manifest visa, dan kepuasan jamaah meningkat tajam.'
+    },
+    modules: [
+      { id: 'm1', name: 'Paket & Kuota Keberangkatan', description: 'Manajemen seat penerbangan, paket Umroh/Haji, dan jadwal kloter', iconName: 'Calendar', aiEnabled: true },
+      { id: 'm2', name: 'AI Passport OCR & Jamaah Portal', description: 'Pindai data paspor otomatis dan rekam medis jamaah', iconName: 'ScanLine', aiEnabled: true },
+      { id: 'm3', name: 'Smart Hotel Rooming Engine', description: 'Alokasi kamar Quad/Triple/Double otomatis sesuai mahram', iconName: 'Hotel', aiEnabled: true },
+      { id: 'm4', name: 'Manifest Maskapai & Visa Tracker', description: 'Integrasi PNR maskapai dan status pengajuan visa Nusuk', iconName: 'Plane', aiEnabled: false },
+      { id: 'm5', name: 'Billing, Cicilan & Komisi Agen', description: 'Invoice Virtual Account, cicilan tabungan, dan komisi agen', iconName: 'CreditCard', aiEnabled: false },
+      { id: 'm6', name: 'AI Mutawwif Companion App', description: 'Aplikasi mobile panduan doa, manasik, dan tracking jamaah', iconName: 'Bot', aiEnabled: true }
+    ],
+    technology: [
+      { name: 'React + TypeScript', category: 'Frontend', description: 'Travel command center & mobile PWA jamaah' },
+      { name: 'Node.js Express', category: 'Backend', description: 'High-throughput manifest ingestion' },
+      { name: 'PostgreSQL / Firestore', category: 'Database', description: 'Scalable records & relations' },
+      { name: 'Gemini 2.5 Vision & OCR', category: 'AI', description: 'Automated passport MRZ scanner & Q&A manasik' },
+      { name: 'Siskopatuh & Airline PNR API', category: 'API', description: 'Integration available' }
+    ],
+    aiFeatures: [
+      { id: 'af1', name: 'AI Passport MRZ Scanner', description: 'Ekstraksi otomatis foto paspor internasional dalam 2 detik dengan validasi masa berlaku > 6 bulan.', status: 'CONCEPT', iconName: 'ScanLine' },
+      { id: 'af2', name: 'AI Smart Rooming Allocator', description: 'Pencocokan kamar hotel optimal berdasarkan ikatan mahram keluarga dan gender jamaah.', status: 'CONCEPT', iconName: 'LayoutGrid' },
+      { id: 'af3', name: 'AI Mutawwif Assistant 24/7', description: 'Chatbot asisten manasik interaktif untuk menjawab pertanyaan seputar ibadah & lokasi hotel.', status: 'CONCEPT', iconName: 'Bot' }
+    ],
+    workflow: [
+      { step: 1, title: 'Registrasi & Scan Paspor', description: 'Jamaah/agen upload foto paspor, AI OCR mengekstrak seluruh data identitas secara akurat.' },
+      { step: 2, title: 'Pembayaran DP & Cicilan', description: 'Sistem menerbitkan invoice Virtual Account dan notifikasi konfirmasi WhatsApp otomatis.' },
+      { step: 3, title: 'Manifest & Auto-Rooming', description: 'Admin men-generate manifest tiket pesawat dan alokasi kamar hotel otomatis sebelum keberangkatan.' },
+      { step: 4, title: 'Pelaksanaan Ibadah di Tanah Suci', description: 'Jamaah menggunakan aplikasi mobile dengan panduan manasik AI dan koordinasi mutawwif real-time.' }
+    ],
+    benefits: [
+      'Zero Kesalahan Input Nama Paspor & Tiket Pesawat',
+      'Penyusunan Rooming List Hotel Selesai Cepat & Tepat',
+      'Rekonsiliasi Pembayaran Cicilan Jamaah Real-Time',
+      'Peningkatan Loyalitas Jamaah & Efisiensi Tim Lapangan'
+    ],
+    screenshots: [
+      { id: 'sc1', title: 'Travel Command Center & Manifest', description: 'Overview kloter keberangkatan, status visa, & kuota seat', image: 'https://images.unsplash.com/photo-1565552684305-7e9c5f87ec17?auto=format&fit=crop&w=1200&q=80', device: 'desktop', sortOrder: 1 },
+      { id: 'sc2', title: 'AI Passport Scanner & Rooming List', description: 'Antarmuka ekstraksi paspor dan pembagian kamar hotel', image: 'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1200&q=80', device: 'dashboard', sortOrder: 2 },
+      { id: 'sc3', title: 'Mobile Companion Jamaah', description: 'Aplikasi panduan doa manasik dan jadwal rombongan', image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80', device: 'mobile', sortOrder: 3 }
+    ],
+    dashboardPreview: {
+      kpis: [
+        { label: 'Total Jamaah Musim Ini', value: '1,450 Pax', change: '+28.5%', trend: 'up' },
+        { label: 'Visa Issued Rate', value: '98.2%', change: 'Near Perfect', trend: 'up' },
+        { label: 'Total Revenue Paket', value: 'Rp 41.2M', change: '+32.0%', trend: 'up' },
+        { label: 'Payment Settlement', value: '94.6%', change: 'On Schedule', trend: 'up' }
+      ],
+      charts: [
+        { title: 'Tren Jamaah Terdaftar per Kloter (Sample Data)', type: 'bar', data: [{ day: 'Kloter 1', val: 90 }, { day: 'Kloter 2', val: 90 }, { day: 'Kloter 3', val: 88 }, { day: 'Kloter 4', val: 90 }, { day: 'Kloter 5', val: 90 }] }
+      ],
+      recentData: [
+        { col1: 'Grup VIP Awal Musim (9 Hari)', col2: 'SV-819 Jakarta -> Jeddah', col3: '45/45 Pax (Full)', status: 'VISA ISSUED' },
+        { col1: 'Grup Reguler Plus Turki (12 Hari)', col2: 'TK-56 Jakarta -> Istanbul', col3: '88/90 Pax', status: 'ROOMING READY' },
+        { col1: 'Haji Khusus Furoda 1448H', col2: 'GA-980 Jakarta -> Madinah', col3: '30/30 Pax (Full)', status: 'DOCUMENT VERIFIED' }
+      ],
+      aiInsights: [
+        'AI Summary: Seluruh 45 jamaah Kloter VIP telah teralokasikan rooming hotel Makkah & Madinah dengan validasi mahram 100%.',
+        'Alert: Ditemukan 2 paspor jamaah kloter Desember dengan masa berlaku tersisa 6,5 bulan, disarankan perpanjangan dini.'
+      ]
+    }
+  },
+  {
+    id: 'port-fleet-management',
+    name: 'Smart Fleet Management',
+    slug: 'smart-fleet-management',
+    industry: 'Logistics & Fleet',
+    category: 'Logistics',
+    description: 'Sistem telematika armada terpadu: Live GPS tracking, sensor anti-pencurian solar BBM, driver safety scorecard, & jadwal servis kendaraan.',
+    fullDescription: 'Smart Fleet Management & Telematics IoT adalah platform pemantauan operasional kendaraan dan truk komprehensif. Menghubungkan unit telemetri OBD-II / CANBus, sensor level bahan bakar real-time, evaluasi kebiasaan mengemudi (harsh braking, over-speeding, idling), jadwal perawatan berbasis kilometer, serta digitalisasi surat jalan pengiriman (e-POD).',
+    projectType: 'Concept',
+    status: 'CONCEPT PROJECT',
+    coverImage: 'from-blue-600/30 via-indigo-900/20 to-slate-950 border-blue-500/30',
+    relatedIndustrySlug: 'fleet-management',
+    featured: true,
+    visibility: 'PUBLIC',
+    approvalStatus: 'PUBLISHED',
+    version: 1,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+    problems: [
+      { id: 'p1', title: 'Kebocoran Konsumsi BBM Solar & Siphoning', description: 'Pencurian solar di rute perjalanan jarak jauh sulit dibuktikan tanpa data sensor flow-meter yang akurat.', impact: 'Biaya BBM membengkak 20-30%' },
+      { id: 'p2', title: 'Perilaku Driver Berbahaya & Risiko Kecelakaan', description: 'Pengemudi sering melaju melebihi batas kecepatan (speeding) dan rem mendadak tanpa pengawasan.', impact: 'Klaim asuransi tinggi & keausan ban/rem cepat' },
+      { id: 'p3', title: 'Downtime Armada Akibat Telat Servis', description: 'Pergantian oli dan pemeriksaan rem terlambat karena pencatatan odometer manual.', impact: 'Truk mogok di jalan & keterlambatan delivery' }
+    ],
+    solution: {
+      summary: 'Platform komando armada real-time yang memantau lokasi, BBM, keselamatan driver, dan status servis dalam satu dashboard interaktif.',
+      digitalSolution: 'Live GPS map tracking, sensor tangki BBM anti-siphoning, scorecard pengemudi, reminder servis otomatis, dan e-surat jalan.',
+      businessImpact: 'Menghemat biaya bahan bakar hingga 22%, menekan angka kecelakaan armada, dan meningkatkan on-time delivery.'
+    },
+    modules: [
+      { id: 'm1', name: 'Live GPS & Geofencing Command Center', description: 'Pelacakan posisi real-time ratusan unit armada dengan zona alert rute', iconName: 'Navigation', aiEnabled: true },
+      { id: 'm2', name: 'Fuel Telemetry & Anomaly Detector', description: 'Sensor volume tangki solar dan alert penurunan BBM drastis', iconName: 'Fuel', aiEnabled: true },
+      { id: 'm3', name: 'Driver Safety & Behavior Scorecard', description: 'Skor keselamatan pengemudi (speeding, harsh cornering, idling time)', iconName: 'ShieldCheck', aiEnabled: true },
+      { id: 'm4', name: 'Maintenance & Tire Management', description: 'Jadwal servis berkala berbasis odometer dan histori rotasi ban', iconName: 'Wrench', aiEnabled: true },
+      { id: 'm5', name: 'Digital Delivery Order & e-POD', description: 'Surat jalan digital, foto bukti serah terima, dan tanda tangan digital', iconName: 'FileCheck', aiEnabled: false }
+    ],
+    technology: [
+      { name: 'React + Mapbox GL', category: 'Frontend', description: 'High-density telemetry dashboard' },
+      { name: 'Node.js Express + TS', category: 'Backend', description: 'MQTT / TCP Telematics ingestion broker' },
+      { name: 'PostgreSQL / TimescaleDB', category: 'Database', description: 'High volume time-series GPS coordinates' },
+      { name: 'Gemini AI Telematics Engine', category: 'AI', description: 'Fuel anomaly detector & multi-stop route optimizer' },
+      { name: 'IoT GPS & CANBus Gateways', category: 'API', description: 'Integration available' }
+    ],
+    aiFeatures: [
+      { id: 'af1', name: 'AI Fuel Siphoning Anomaly Detector', description: 'Deteksi kecurangan penurunan volume BBM saat kendaraan posisi mesin mati atau di luar SPBU resmi.', status: 'CONCEPT', iconName: 'AlertTriangle' },
+      { id: 'af2', name: 'AI Predictive Vehicle Maintenance', description: 'Prediksi keausan komponen transmisi & rem berdasarkan histori beban muatan dan jarak tempuh.', status: 'CONCEPT', iconName: 'Cpu' },
+      { id: 'af3', name: 'AI Multi-Stop Route Optimizer', description: 'Rekomendasi rute pengiriman multi-titik terbaik untuk menekan waktu tempuh dan konsumsi BBM.', status: 'CONCEPT', iconName: 'TrendingUp' }
+    ],
+    workflow: [
+      { step: 1, title: 'Telemetri IoT & GPS Ingestion', description: 'Perangkat GPS & sensor kendaraan mengirim data koordinat, kecepatan, dan volume BBM setiap 10 detik.' },
+      { step: 2, title: 'Real-time Command Monitoring', description: 'Dispatcher memantau pergerakan armada pada peta live dan menerima peringatan geofencing.' },
+      { step: 3, title: 'AI Evaluasi Keselamatan & BBM', description: 'Sistem menganalisis efisiensi konsumsi solar dan menghitung skor keselamatan setiap pengemudi.' },
+      { step: 4, title: 'Maintenance & Delivery Completion', description: 'Jadwal servis otomatis diterbitkan dan driver menyelesaikan e-POD surat jalan di lokasi tujuan.' }
+    ],
+    benefits: [
+      'Penghematan Biaya Bahan Bakar Solar hingga 22%',
+      'Penurunan Risiko Kerusakan Mesin Mendadak',
+      'Peningkatan Kedisiplinan & Keselamatan Sopir',
+      'Visibilitas Pengiriman Barang Real-Time ke Klien'
+    ],
+    screenshots: [
+      { id: 'sc1', title: 'Fleet Live Telematics Map', description: 'Peta pelacakan posisi GPS real-time & status muatan unit', image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80', device: 'desktop', sortOrder: 1 },
+      { id: 'sc2', title: 'Fuel Monitoring & Sensor Log', description: 'Grafik ketinggian solar tangki vs pergerakan kecepatan', image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80', device: 'dashboard', sortOrder: 2 },
+      { id: 'sc3', title: 'Driver Scorecard & e-POD Mobile', description: 'Aplikasi mobile pengemudi untuk surat jalan dan skor kerja', image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80', device: 'mobile', sortOrder: 3 }
+    ],
+    dashboardPreview: {
+      kpis: [
+        { label: 'Active Fleet Online', value: '128 / 135 Units', change: '94.8% Active', trend: 'up' },
+        { label: 'Fuel Saved This Month', value: '14,200 Liters', change: '-18.4% Cost', trend: 'up' },
+        { label: 'Fleet Safety Score', value: '92.4 / 100', change: 'Safe Operations', trend: 'up' },
+        { label: 'On-Time Deliveries', value: '98.5%', change: '+3.2%', trend: 'up' }
+      ],
+      charts: [
+        { title: 'Konsumsi BBM per 100 KM (Sample Fleet Data)', type: 'bar', data: [{ day: 'Sen', val: 32 }, { day: 'Sel', val: 30 }, { day: 'Rab', val: 29 }, { day: 'Kam', val: 31 }, { day: 'Jum', val: 28 }, { day: 'Sab', val: 27 }] }
+      ],
+      recentData: [
+        { col1: 'Truck Tronton B-9182-XYZ', col2: 'Jakarta -> Surabaya (Pantura)', col3: 'Fuel: 82% (Normal)', status: 'ON ROUTE' },
+        { col1: 'Wingbox Trailer B-8421-KLD', col2: 'Cikarang -> Pelabuhan Tanjung Priok', col3: 'Speed: 58 km/h', status: 'IN TRANSIT' },
+        { col1: 'Dump Truck DT-104', col2: 'Area Tambang Site A', col3: 'Maintenance OK', status: 'OPERATIONAL' }
+      ],
+      aiInsights: [
+        'AI Dispatch Summary: Jalur Pantura lancar, efisiensi konsumsi BBM koridor Timur meningkat 4,2% pekan ini.',
+        'Alert: Terdeteksi 1 unit (Truck B-9182) idling lebih dari 45 menit dengan AC menyala di rest area KM 166.'
+      ]
+    }
   }
 ];
 
@@ -886,11 +1057,27 @@ export class PortfolioService {
       return INITIAL_PORTFOLIOS;
     }
     try {
-      return JSON.parse(raw);
+      const parsed: PortfolioConfig[] = JSON.parse(raw);
+      if (Array.isArray(parsed)) {
+        // Merge any new default portfolios that are not yet in stored local storage
+        let updated = false;
+        const currentIds = new Set(parsed.map((p) => p.id));
+        for (const initial of INITIAL_PORTFOLIOS) {
+          if (!currentIds.has(initial.id)) {
+            parsed.push(initial);
+            updated = true;
+          }
+        }
+        if (updated) {
+          localStorage.setItem(STORAGE_PORTFOLIOS, JSON.stringify(parsed));
+        }
+        return parsed;
+      }
     } catch {
       localStorage.setItem(STORAGE_PORTFOLIOS, JSON.stringify(INITIAL_PORTFOLIOS));
       return INITIAL_PORTFOLIOS;
     }
+    return INITIAL_PORTFOLIOS;
   }
 
   public static getAllPortfolios(options?: {

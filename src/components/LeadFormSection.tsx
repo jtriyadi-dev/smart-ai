@@ -137,7 +137,7 @@ export const LeadFormSection: React.FC<LeadFormSectionProps> = ({ initialData })
       );
       setSubmissionResult({
         leadId: fallbackId,
-        whatsappUrl: `https://wa.me/6281234567890?text=${waText}`,
+        whatsappUrl: `https://wa.me/6285187869164?text=${waText}`,
         message: 'Permohonan konsultasi aplikasi Anda telah dibuat!'
       });
     } finally {

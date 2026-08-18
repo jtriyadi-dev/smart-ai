@@ -132,7 +132,7 @@ export const AISalesAssistantPanel: React.FC<AISalesAssistantPanelProps> = ({
   };
 
   const handleSendWhatsApp = (text: string) => {
-    const phone = opportunity?.whatsapp || opportunity?.phone || opportunity?.contactPhone || '6281234567890';
+    const phone = opportunity?.whatsapp || opportunity?.phone || opportunity?.contactPhone || '6285187869164';
     const url = generateWhatsAppUrl(phone, text);
     window.open(url, '_blank');
     if (onActionTriggered) {

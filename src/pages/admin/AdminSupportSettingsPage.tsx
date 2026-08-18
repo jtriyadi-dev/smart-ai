@@ -15,7 +15,7 @@ export const AdminSupportSettingsPage: React.FC = () => {
     enableMalwareScan: true,
     allowedFileTypes: ['.png', '.jpg', '.jpeg', '.pdf', '.docx', '.txt', '.log', '.zip'],
     maxFileSizeMb: 25,
-    whatsappSupportNumber: '+6281298765432',
+    whatsappSupportNumber: '+6285187869164',
     businessHours: 'Monday–Friday 08:00–17:00 WIB'
   });
   const [saved, setSaved] = useState(false);

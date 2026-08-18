@@ -124,7 +124,7 @@ export const AdminCRMPage: React.FC = () => {
   };
 
   const handleWhatsAppClick = (phoneOrOpp: string | Opportunity, nameCustom?: string, contextCustom?: string) => {
-    let targetPhone = '+6281234567890';
+    let targetPhone = '+6285187869164';
     let targetName = 'Klien';
     let targetContext = 'Diskusi Proyek SMART-AI.ID';
 
@@ -133,7 +133,7 @@ export const AdminCRMPage: React.FC = () => {
       targetName = nameCustom || 'Klien';
       targetContext = contextCustom || 'Diskusi Proyek';
     } else {
-      targetPhone = phoneOrOpp.contactPhone || '+6281234567890';
+      targetPhone = phoneOrOpp.contactPhone || '+6285187869164';
       targetName = phoneOrOpp.contactName;
       targetContext = phoneOrOpp.name;
     }

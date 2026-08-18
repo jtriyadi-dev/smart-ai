@@ -127,7 +127,7 @@ export const FloatingChatbot: React.FC<FloatingChatbotProps> = ({ currentPath = 
         setShowLeadModal(true);
         break;
       case 'OPEN_WHATSAPP':
-        window.open('https://wa.me/6281298765432?text=Halo%20SMART-AI.ID%2C%20saya%20butuh%20bantuan', '_blank');
+        window.open('https://wa.me/6285187869164?text=Halo%20SMART-AI.ID%2C%20saya%20butuh%20bantuan', '_blank');
         break;
       default:
         if (cta.targetRoute) {

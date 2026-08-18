@@ -15,6 +15,7 @@ const CATEGORIES: IndustrySolutionCategory[] = [
   'Agriculture',
   'Aquaculture',
   'Hospitality',
+  'Travel & Umroh',
   'Retail',
   'Finance',
   'Food & Beverage',

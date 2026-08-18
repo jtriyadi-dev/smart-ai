@@ -26,6 +26,8 @@ const CATEGORY_FILTERS = [
   'Manufacturing',
   'Retail',
   'Food & Beverage',
+  'Travel & Umroh',
+  'Logistics',
   'Enterprise'
 ];
 

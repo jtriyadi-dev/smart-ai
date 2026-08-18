@@ -90,7 +90,7 @@ export class SupportTicketService {
         enableMalwareScan: true,
         allowedFileTypes: ['.png', '.jpg', '.jpeg', '.pdf', '.docx', '.txt', '.log', '.zip', '.mp4'],
         maxFileSizeMb: 25,
-        whatsappSupportNumber: '+6281298765432',
+        whatsappSupportNumber: '+6285187869164',
         businessHours: 'Monday–Friday 08:00–17:00 WIB'
       };
       localStorage.setItem(STORAGE_SETTINGS, JSON.stringify(defaultSettings));
@@ -925,7 +925,7 @@ export class SupportTicketService {
         enableMalwareScan: true,
         allowedFileTypes: ['.png', '.jpg', '.jpeg', '.pdf', '.docx', '.txt', '.log', '.zip'],
         maxFileSizeMb: 20,
-        whatsappSupportNumber: '+6281298765432',
+        whatsappSupportNumber: '+6285187869164',
         businessHours: 'Monday–Friday 08:00–17:00 WIB'
       };
     } catch (e) {

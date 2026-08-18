@@ -13,7 +13,7 @@ export const WhatsAppFloatingButton: React.FC = () => {
 
   const handleSendWA = (msgText: string) => {
     const text = encodeURIComponent(msgText || 'Halo Tim SMART-AI.ID, saya ingin berkonsultasi mengenai perancangan aplikasi web.');
-    window.open(`https://wa.me/6281234567890?text=${text}`, '_blank');
+    window.open(`https://wa.me/6285187869164?text=${text}`, '_blank');
     setIsOpen(false);
   };
 

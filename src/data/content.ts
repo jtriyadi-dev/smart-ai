@@ -276,6 +276,17 @@ export const INDUSTRY_SOLUTIONS: IndustrySolution[] = [
     impactMetrics: 'Perputaran Meja Restoran +25%'
   },
   {
+    id: 'travel-haji-umroh',
+    title: 'Travel Haji & Umroh Management System',
+    category: 'commerce',
+    iconName: 'Compass',
+    shortDesc: 'Sistem Terpadu Travel Haji & Umroh: Pendaftaran Jamaah, OCR Paspor, Manifest Tiket & Visa, Rooming Hotel, & Siskopatuh Ready.',
+    fullDesc: 'Platform digital all-in-one khusus biro travel haji dan umroh. Mengelola paket keberangkatan, database jamaah, tracking berkas visa/paspor, pembagian kamar hotel Makkah/Madinah, manifest bus & penerbangan, pencatatan pembayaran cicilan, hingga AI asisten manasik & mutawwif di tanah suci.',
+    keyFeatures: ['Pendaftaran Online & OCR Paspor Otomatis', 'Manajemen Paket Haji Khusus & Umroh', 'Rooming Hotel & Manifest Penerbangan', 'Sistem Pembayaran Cicilan & Invoice Otomatis', 'AI Panduan Manasik & Mutawwif Companion', 'Integrasi Notifikasi Jadwal & Broadcast WhatsApp Jamaah'],
+    aiCapability: 'AI OCR Ekstraksi Data Paspor & KTP Jamaah, Chatbot Q&A Manasik 24/7, dan Auto-Allocation Rooming List Hotel',
+    impactMetrics: 'Efisiensi Administrasi Berkas 70% & Zero Human Error'
+  },
+  {
     id: 'enterprise',
     title: 'Custom Enterprise System',
     category: 'primary',
@@ -525,6 +536,36 @@ export const PORTFOLIO_CONCEPTS: PortfolioItem[] = [
     ],
     aiFeature: 'Rekomendasi Auto-Reorder Point Stok & Prediksi Trend Penjualan Produk',
     imageBg: 'from-fuchsia-900/40 via-slate-900 to-slate-950'
+  },
+  {
+    id: 'p-travel-haji-umroh',
+    title: 'Smart Hajj & Umrah Travel Platform',
+    industry: 'Travel Haji & Umroh Khusus',
+    badge: 'Concept / Custom Solution',
+    description: 'Sistem operasional biro perjalanan haji & umroh terintegrasi: pendaftaran online, OCR paspor, manifest tiket & visa, rooming list hotel, dan mutawwif AI assistant.',
+    fullDetails: 'Menghubungkan biro travel, kantor cabang, agen pemasaran, dan jamaah dalam satu ekosistem. Dilengkapi portal tracking berkas visa, pembagian kamar hotel di Makkah/Madinah otomatis, serta aplikasi mobile pendamping jamaah di tanah suci.',
+    tags: ['Travel Umroh', 'OCR Paspor', 'Manifest & Rooming', 'Mutawwif AI', 'Siskopatuh Ready'],
+    metrics: [
+      { label: 'Proses Berkas Jamaah', value: '4x Cepat' },
+      { label: 'Ketepatan Rooming', value: '100%' }
+    ],
+    aiFeature: 'AI Document OCR Paspor/KTP, Q&A Panduan Manasik Real-time, & Smart Hotel Rooming Allocation',
+    imageBg: 'from-emerald-950 via-teal-900/40 to-slate-950'
+  },
+  {
+    id: 'p-fleet',
+    title: 'Smart Fleet Management & Telematics IoT',
+    industry: 'Logistik, Hauling & Transportasi Armada',
+    badge: 'Concept / Custom Solution',
+    description: 'Sistem pemantauan armada terpadu: pelacakan GPS real-time, sensor konsumsi bahan bakar (solar), driver safety scorecard, dan jadwal servis kendaraan.',
+    fullDetails: 'Memberikan pengawasan menyeluruh terhadap ratusan armada truk dan kendaraan operasional. Mencegah pencurian solar, memantau perilaku pengemudi (kecepatan & pengereman mendadak), serta mendigitalkan surat jalan pengiriman.',
+    tags: ['Fleet Management', 'GPS Telematics', 'Fuel Sensor IoT', 'Safety Scorecard', 'e-POD'],
+    metrics: [
+      { label: 'Efisiensi BBM', value: '+22%' },
+      { label: 'Downtime Armada', value: '-35%' }
+    ],
+    aiFeature: 'AI Predictive Maintenance Komponen Kendaraan & Anomaly Detection Kebocoran Solar',
+    imageBg: 'from-blue-950 via-indigo-900/40 to-slate-950'
   },
   {
     id: 'p-dashboard',

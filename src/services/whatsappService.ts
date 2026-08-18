@@ -3,7 +3,7 @@ import { WhatsAppConfig } from '../types';
 const STORAGE_KEY_WA_CONFIG = 'smart_ai_whatsapp_config';
 
 export const DEFAULT_WHATSAPP_CONFIG: WhatsAppConfig = {
-  whatsappNumber: '6281234567890',
+  whatsappNumber: '6285187869164',
   businessName: 'SMART-AI.ID',
   defaultMessage: 'Halo SMART-AI.ID, saya tertarik untuk berkonsultasi mengenai solusi AI dan pembuatan aplikasi kustom.'
 };
@@ -88,7 +88,7 @@ export class WhatsAppService {
    * Helper to generate WhatsApp URL directly for a phone number, recipient name and context
    */
   public static generateWhatsAppUrl(phone: string, recipientName?: string, contextMessage?: string): string {
-    const cleanNumber = this.formatPhoneNumber(phone || '6281234567890');
+    const cleanNumber = this.formatPhoneNumber(phone || '6285187869164');
     const greeting = recipientName ? `Halo ${recipientName}, ` : `Halo, `;
     const text = contextMessage
       ? `${greeting}${contextMessage}`
@@ -109,7 +109,7 @@ export class WhatsAppService {
 }
 
 export function generateWhatsAppUrl(phone: string, text?: string): string {
-  const cleanNumber = WhatsAppService.formatPhoneNumber(phone || '6281234567890');
+  const cleanNumber = WhatsAppService.formatPhoneNumber(phone || '6285187869164');
   const messageText = text || 'Halo, saya dari tim SMART-AI.ID.';
   return `https://wa.me/${cleanNumber}?text=${encodeURIComponent(messageText)}`;
 }

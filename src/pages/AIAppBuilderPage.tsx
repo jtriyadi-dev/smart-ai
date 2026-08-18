@@ -186,7 +186,7 @@ export const AIAppBuilderPage: React.FC<AIAppBuilderPageProps> = ({
       const text = encodeURIComponent(
         `Halo Tim SMART-AI.ID, saya telah menggunakan AI Application Builder untuk perusahaan ${inputDataName(formData)}. Saya ingin berkonsultasi mengenai rekomendasi aplikasi: ${analysis.recommendedSolution?.solutionName}`
       );
-      window.open(`https://wa.me/6281234567890?text=${text}`, '_blank');
+      window.open(`https://wa.me/6285187869164?text=${text}`, '_blank');
     }
   };
 

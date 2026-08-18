@@ -107,7 +107,7 @@ const DEFAULT_CONTACT_FOOTER_CONTENT: WebsiteContactFooterContent = {
   officeAddress: 'Cyber 2 Tower, Lt. 18, Jl. H. R. Rasuna Said, Kuningan, Jakarta Selatan 12950',
   officialEmail: 'contact@smart-ai.id',
   phoneHotline: '+62 21 5088 9000',
-  whatsappNumber: '+6281234567890',
+  whatsappNumber: '+6285187869164',
   operationalHours: 'Senin - Jumat: 08.30 - 17.30 WIB',
   mapsEmbedUrl: 'https://maps.google.com',
   socialLinkedin: 'https://linkedin.com/company/smart-ai-id',

@@ -106,7 +106,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenC
 
   const openWhatsApp = () => {
     const text = encodeURIComponent('Halo Tim SMART-AI.ID, saya ingin berkonsultasi mengenai pembuatan aplikasi web custom berbasis AI untuk perusahaan kami.');
-    window.open(`https://wa.me/6281234567890?text=${text}`, '_blank');
+    window.open(`https://wa.me/6285187869164?text=${text}`, '_blank');
   };
 
   return (
