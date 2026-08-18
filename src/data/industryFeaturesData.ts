@@ -720,6 +720,106 @@ export const INDUSTRY_SPECIFIC_FEATURE_GROUPS: IndustryFeatureGroup[] = [
     ]
   },
   {
+    industryId: 'fleet_management',
+    industryName: 'Fleet Management & Tracking Armada',
+    industryAliases: ['fleet', 'fleet management', 'manajemen armada', 'fms', 'tracking armada', 'gps tracking', 'tms', 'truk', 'kendaraan', 'fleet telematics', 'manajemen kendaraan'],
+    category: 'Transportasi & Operasional Armada',
+    iconName: 'Truck',
+    description: 'Telemetri GPS real-time, sensor BBM solar, driver behavior scorecard, maintenance armada & ban, e-Surat Jalan, serta AI route optimization.',
+    recommendedPresets: [
+      'Live GPS Telematics & Geofencing Command Center',
+      'Driver Behavior Monitoring & Safety Scorecard',
+      'Sensor BBM Solar & Deteksi Siphoning / Pencurian',
+      'Jadwal Servis Berkala, Odometer & Manajemen Ban',
+      'Digital Dispatch & Multi-Stop Route Sequencing',
+      'Surat Jalan Digital & e-POD (Proof of Delivery)',
+      'Uang Jalan, Tol & Biaya Operasional per KM',
+      'AI Predictive Fleet Breakdown Forecaster',
+      'Dashboard Eksekutif',
+      'User Management & Roles (RBAC)'
+    ],
+    features: [
+      {
+        id: 'Live GPS Telematics & Geofencing Command Center',
+        name: 'Live GPS Telematics & Geofencing Command Center',
+        category: 'Industry Specific',
+        description: 'Peta live lokasi armada (truk, fuso, tronton, van), status kontak mesin (IGN ON/OFF), batas wilayah geofence, dan histori playback rute.',
+        isRecommended: true,
+        badge: 'Live GPS'
+      },
+      {
+        id: 'Driver Behavior Monitoring & Safety Scorecard',
+        name: 'Driver Behavior Monitoring & Safety Scorecard',
+        category: 'Industry Specific',
+        description: 'Deteksi akselerasi kasar (harsh acceleration), pengereman mendadak (harsh braking), tikungan tajam, batas kecepatan, dan jam istirahat sopir.',
+        isRecommended: true,
+        badge: 'Driver Safety'
+      },
+      {
+        id: 'Sensor BBM Solar & Deteksi Siphoning / Pencurian',
+        name: 'Sensor BBM Solar & Deteksi Siphoning / Pencurian',
+        category: 'Industry Specific',
+        description: 'Integrasi sensor level bahan bakar tangki, deteksi penurunan BBM mendadak (siphoning/pencurian solar), dan efisiensi liter per km.',
+        isRecommended: true,
+        badge: 'Fuel Sensor'
+      },
+      {
+        id: 'Jadwal Servis Berkala, Odometer & Manajemen Ban',
+        name: 'Jadwal Servis Berkala, Odometer & Manajemen Ban',
+        category: 'Operations',
+        description: 'Pengingat ganti oli berdasarkan kilometer odometer/jam mesin, rotasi dan ketebalan alur ban, kartu riwayat servis, serta stok sparepart.',
+        isRecommended: true,
+        badge: 'Maintenance'
+      },
+      {
+        id: 'Digital Dispatch & Multi-Stop Route Sequencing',
+        name: 'Digital Dispatch & Multi-Stop Route Sequencing',
+        category: 'Operations',
+        description: 'Penugasan rute otomatis ke driver terdekat, urutan titik drop muatan efisien, dan estimasi waktu tiba (ETA) presisi.',
+        isRecommended: true,
+        badge: 'Smart Dispatch'
+      },
+      {
+        id: 'Surat Jalan Digital & e-POD (Proof of Delivery)',
+        name: 'Surat Jalan Digital & e-POD (Proof of Delivery)',
+        category: 'Industry Specific',
+        description: 'Penerbitan surat jalan QR code, tanda tangan penerima di layar HP driver, dan unggah foto kondisi barang saat serah terima.',
+        isRecommended: true,
+        badge: 'e-POD'
+      },
+      {
+        id: 'Uang Jalan, Tol & Biaya Operasional per KM',
+        name: 'Uang Jalan, Tol & Biaya Operasional per KM',
+        category: 'Finance',
+        description: 'Kalkulasi uang saku sopir, saldo e-toll, biaya penyeberangan kapal/retribusi, dan analisis total Cost per Kilometer (CPK).',
+        isRecommended: true,
+        badge: 'Cost/KM'
+      },
+      {
+        id: 'Pajak Kendaraan, Uji KIR & STNK Renewal Alert',
+        name: 'Pajak Kendaraan, Uji KIR & STNK Renewal Alert',
+        category: 'Operations',
+        description: 'Kalender kepatuhan dokumen legalitas armada: pengingat jatuh tempo uji berkala KIR, pajak tahunan STNK, izin trayek, dan polis asuransi.'
+      },
+      {
+        id: 'AI Predictive Fleet Breakdown Forecaster',
+        name: 'AI Predictive Fleet Breakdown Forecaster',
+        category: 'AI',
+        description: 'AI pembaca kode OBD-II/CAN-bus untuk memprediksi kerusakan transmisi, rem, radiator sebelum truk mogok di jalan raya.',
+        isAI: true,
+        badge: 'Fleet AI'
+      },
+      {
+        id: 'AI Dynamic Route & Fuel Optimizer',
+        name: 'AI Dynamic Route & Fuel Optimizer',
+        category: 'AI',
+        description: 'AI pengoptimal rute pengiriman multi-titik untuk memangkas jarak tempuh, konsumsi solar, dan biaya tol secara real-time.',
+        isAI: true,
+        badge: 'Route AI'
+      }
+    ]
+  },
+  {
     industryId: 'logistics_cargo',
     industryName: 'Logistik, Cargo & Ekspedisi',
     industryAliases: ['logistics', 'cargo', 'ekspedisi', 'freight', 'transport', 'shipping', 'pengiriman', 'kurir'],

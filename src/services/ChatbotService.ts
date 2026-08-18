@@ -374,7 +374,7 @@ Silakan ceritakan kebutuhan bisnis atau rencana aplikasi Anda!`;
     kbArticles: any[],
     intent: UserIntent
   ): Promise<string> {
-    const apiKey = process.env.GEMINI_API_KEY;
+    const apiKey = (import.meta as any).env?.VITE_GEMINI_API_KEY || (typeof process !== 'undefined' ? process.env?.GEMINI_API_KEY : '');
 
     // If KB found specific match, ground it
     const kbContextText = kbArticles.length > 0

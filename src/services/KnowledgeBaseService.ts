@@ -636,7 +636,7 @@ export class KnowledgeBaseService {
   // --- AI Article Generator ---
 
   public static async generateArticleDraftWithAI(topic: string, category: KnowledgeCategory): Promise<{ title: string; summary: string; content: string; tags: string[] }> {
-    const apiKey = process.env.GEMINI_API_KEY;
+    const apiKey = (import.meta as any).env?.VITE_GEMINI_API_KEY || (typeof process !== 'undefined' ? process.env?.GEMINI_API_KEY : '');
     if (!apiKey) {
       return {
         title: `Panduan ${topic}`,

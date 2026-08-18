@@ -3,7 +3,7 @@ import { FullProjectRecord } from '../types';
 
 export class AIProjectManagerService {
   private static getGenAIClient(): GoogleGenAI | null {
-    const apiKey = process.env.GEMINI_API_KEY;
+    const apiKey = (import.meta as any).env?.VITE_GEMINI_API_KEY || (typeof process !== 'undefined' ? process.env?.GEMINI_API_KEY : '');
     if (!apiKey) return null;
     return new GoogleGenAI({ apiKey });
   }

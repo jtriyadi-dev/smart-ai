@@ -52,6 +52,7 @@ const INDUSTRIES = [
   'Restaurant',
   'Distributor',
   'Logistics',
+  'Fleet Management',
   'Construction',
   'Property',
   'Agriculture',

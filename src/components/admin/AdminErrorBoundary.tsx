@@ -11,7 +11,7 @@ interface State {
   error: Error | null;
 }
 
-export class AdminErrorBoundary extends Component<Props, State> {
+export class AdminErrorBoundary extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {

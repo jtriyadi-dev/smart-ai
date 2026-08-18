@@ -3,7 +3,7 @@ import { DocumentModel, DocumentVersion } from '../types';
 
 export class AIDocumentAssistantService {
   private static getAI(): GoogleGenAI | null {
-    const apiKey = (import.meta as any).env?.VITE_GEMINI_API_KEY || process.env.GEMINI_API_KEY;
+    const apiKey = (import.meta as any).env?.VITE_GEMINI_API_KEY || (typeof process !== 'undefined' ? process.env?.GEMINI_API_KEY : '');
     if (apiKey) {
       return new GoogleGenAI({ apiKey });
     }

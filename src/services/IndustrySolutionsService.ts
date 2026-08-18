@@ -1679,6 +1679,135 @@ export const INITIAL_INDUSTRY_SOLUTIONS: IndustrySolutionConfig[] = [
     cta: { buildText: 'Bangun Software Logistik', consultText: 'Konsultasi Logistik', estimateText: 'Hitung Estimasi TMS' }
   },
 
+  // 18.5 SMART FLEET MANAGEMENT SYSTEM (FMS)
+  {
+    slug: 'fleet-management',
+    name: 'Fleet Management System (FMS)',
+    subtitle: 'Smart Fleet Telematics, Real-Time GPS Tracking, Fuel Anti-Theft & Driver Safety Intelligence',
+    category: 'Logistics',
+    isFeatured: true,
+    published: true,
+    icon: '🚛',
+    heroTagline: 'Software Manajemen Armada & Pelacak GPS Truk Terintegrasi AI',
+    heroDescription:
+      'Solusi komprehensif telematika armada transportasi, kargo, logistik, tambang, dan distribusi: Real-Time GPS Tracking dengan status kontak mesin (IGN ON/OFF), sensor level BBM solar anti-siphoning/pencurian, driver behavior scorecard (harsh braking & overspeeding), siklus rotasi ban & jadwal servis odometer, digital dispatching multi-stop, e-Surat Jalan (e-POD), dan AI Predictive Maintenance.',
+    metaTitle: 'Software Fleet Management System & GPS Tracking AI | SMART-AI.ID',
+    metaDescription:
+      'Aplikasi manajemen armada dan tracking truk terpadu: Sensor BBM solar, driver safety scorecard, manajemen ban, jadwal servis odometer, e-POD surat jalan digital, dan AI Predictive Maintenance.',
+    problems: [
+      {
+        id: 'fmp1',
+        title: 'Biaya BBM Solar Membengkak & Rawan Pencurian (Siphoning)',
+        description: 'Pengeluaran solar tidak sebanding dengan jarak tempuh riil. Pencurian BBM di rest area atau manipulasi struk SPBU sulit dibuktikan tanpa sensor tangki otomatis.',
+        impact: 'Pemborosan biaya operasional armada hingga 25% dan kerugian jutaan rupiah per unit per bulan.',
+        solutionHighlight: 'Sensor Level BBM Solar Presisi Tinggi dengan Notifikasi Instan Deteksi Penurunan Drastis (Siphoning Alert).'
+      },
+      {
+        id: 'fmp2',
+        title: 'Perilaku Sopir Ugal-ugalan, Kecepatan Berlebih & Jam Istirahat Kurang',
+        description: 'Sopir kerap melakukan akselerasi kasar, rem mendadak (harsh braking), mengebut melebihi batas (overspeeding), dan idling mesin berjam-jam saat parkir.',
+        impact: 'Tingginya risiko kecelakaan lalu lintas, keausan rem/mesin dini, serta klaim asuransi dan kerusakan muatan kargo.',
+        solutionHighlight: 'Driver Safety Scorecard & DMS Telemetry dengan peringatan audio kabin dan sistem reward pengemudi teladan.'
+      },
+      {
+        id: 'fmp3',
+        title: 'Armada Breakdown Tiba-tiba & Manajemen Ban Tidak Terpantau',
+        description: 'Jadwal ganti oli terlewat, rotasi ban tidak terjadwal, dan ban vulkanisir meletus di jalan tol karena tekanan angin tidak terpantau secara berkala.',
+        impact: 'Keterlambatan pengiriman beruntun, penalti dari pemilik barang (shipper), dan biaya derek darurat yang mahal.',
+        solutionHighlight: 'Manajemen Siklus Hidup Ban (Tyre Lifecycle) & Pengingat Servis Preventif Berbasis Odometer / Jam Mesin.'
+      },
+      {
+        id: 'fmp4',
+        title: 'Inefisiensi Rute Multi-Drop & Surat Jalan Kertas Sering Hilang',
+        description: 'Dispatching pengiriman manual menghasilkan rute bolak-balik yang boros BBM. Surat jalan kertas basah, sobek, atau terlambat diserahkan ke tim keuangan.',
+        impact: 'Penagihan invoice ke klien tertunda hingga berminggu-minggu, memperlambat arus kas (cashflow).',
+        solutionHighlight: 'AI Route & Multi-Stop Dispatch Optimizer dengan Driver Mobile App e-POD (Tanda Tangan & Foto Digital).'
+      }
+    ],
+    solutionOverview:
+      'Platform Fleet Management SMART-AI.ID mengintegrasikan perangkat GPS Tracker IoT, sensor solar ultrasonik/kapasitif, diagnosa CAN-bus OBD-II, dan Driver Mobile App ke dalam satu Command Center terpusat.',
+    businessImpactSummary: [
+      'Penghematan Biaya Konsumsi BBM Solar 18% - 25%',
+      'Penurunan Angka Kecelakaan & Pelanggaran Rute hingga 40%',
+      'Masa Pakai Ban & Komponen Kendaraan Naik 35%',
+      'Proses Tagihan 3x Lebih Cepat dengan Surat Jalan e-POD Digital'
+    ],
+    modules: [
+      { id: 'fmm1', name: 'Live GPS Telematics & Command Center', description: 'Peta live posisi armada, status mesin kontak IGN ON/OFF, geofencing lokasi gudang/pelabuhan, dan playback jejak rute.', iconName: 'Navigation', aiBadge: 'Live GPS' },
+      { id: 'fmm2', name: 'Fuel Level Sensor & Siphoning Alarm', description: 'Monitoring grafik volume solar tangki per liter, deteksi pencurian BBM saat parkir, dan rasio efisiensi KM/Liter.', iconName: 'Fuel', aiBadge: 'Anti-Theft' },
+      { id: 'fmm3', name: 'Driver Behavior & Safety Scorecard', description: 'Skor keselamatan mengemudi berdasarkan sensor harsh braking, overspeeding, tikungan tajam, dan durasi idling.', iconName: 'ShieldCheck' },
+      { id: 'fmm4', name: 'Tyre Lifecycle & Maintenance Scheduler', description: 'Tracking posisi nomor seri ban, ketebalan alur (tread depth), jadwal rotasi, serta servis oli berkala per odometer.', iconName: 'Wrench' },
+      { id: 'fmm5', name: 'Multi-Stop Dispatch & Route Sequencer', description: 'Alokasi armada terdekat, pengurutan titik bongkar muat efisien, dan kalkulasi estimasi waktu tiba (ETA) akurat.', iconName: 'Layers' },
+      { id: 'fmm6', name: 'Driver Mobile App & Digital e-POD', description: 'Aplikasi sopir untuk terima SPK jalan, upload foto kondisi barang, tanda tangan digital penerima, dan klaim uang jalan/tol.', iconName: 'Smartphone' }
+    ],
+    aiFeatures: [
+      { id: 'fmf1', name: 'AI Predictive Vehicle Breakdown Forecaster', description: 'Menganalisis pola telemetri mesin dan getaran sensor untuk memprediksi kerusakan transmisi, aki, atau radiator sebelum mogok.', iconName: 'Wrench', type: 'Forecasting' },
+      { id: 'fmf2', name: 'AI Fuel Siphoning & Anomaly Theft Detector', description: 'Algoritma machine learning yang membedakan penurunan solar alami saat tanjakan/beban berat vs aksi pencurian solar saat parkir.', iconName: 'AlertTriangle', type: 'Anomaly Detection' },
+      { id: 'fmf3', name: 'AI Dynamic Route & Multi-Drop Fuel Optimizer', description: 'Menghitung rute tercepat dengan mempertimbangkan kepadatan lalu lintas, pembatasan jam truk, dan biaya tarif tol terhemat.', iconName: 'Sparkles', type: 'Recommendations' }
+    ],
+    workflowSteps: [
+      { step: 1, title: 'Pembuatan Surat Perintah Kerja (SPK) & Dispatch', desc: 'Planner menentukan rute, muatan, unit armada terbaik, dan menugaskan sopir via aplikasi seluler.', icon: 'FileText' },
+      { step: 2, title: 'Inspeksi Pra-Jalan (P2H) & Check-Out Armada', desc: 'Driver memeriksa kondisi rem, ban, oli, dan lampu via checklist digital di HP sebelum keluar pool/garasi.', icon: 'ClipboardCheck' },
+      { step: 3, title: 'Monitoring Perjalanan, Kecepatan & BBM Real-Time', desc: 'Command center memantau pergerakan unit, deviasi rute, sensor solar, dan alarm keselamatan secara kontinu.', icon: 'MapPin' },
+      { step: 4, title: 'Bongkar Muatan & Bukti Serah Terima (e-POD)', desc: 'Penerima menandatangani digital e-POD di layar smartphone sopir dan sistem otomatis memverifikasi lokasi penerima.', icon: 'CheckCircle' },
+      { step: 5, title: 'Rekap Biaya Operasional (CPK) & Riwayat Odometer', desc: 'Sistem merekap pemakaian solar, biaya tol, klaim uang jalan, serta memperbarui odometer untuk servis berkala berikutnya.', icon: 'DollarSign' }
+    ],
+    dashboardPreview: {
+      kpis: [
+        { label: 'Total Armada Terhubung', value: '128 Unit', change: 'Live GPS 98%', isPositive: true, subtext: '94 Bergerak | 28 Standby | 6 Servis' },
+        { label: 'Efisiensi Rata-rata BBM', value: '3,84 KM/L', change: '+18,2%', isPositive: true, subtext: 'Penghematan Rp 42.500.000 / bln' },
+        { label: 'Skor Keselamatan Pengemudi', value: '92,8 / 100', change: 'Safety Score A', isPositive: true, subtext: '0 Kecelakaan & 98% Patuh Rute' },
+        { label: 'Ketepatan Waktu Delivery (On-Time)', value: '97,4%', change: '+3,5%', isPositive: true, subtext: 'Target Shipper > 95%' }
+      ],
+      chartTitle: 'Tren Konsumsi Solar (Liter) vs Jarak Tempuh Armada (6 Bulan Terakhir)',
+      chartData: [
+        { name: 'Januari', actual: 48000, target: 52000 },
+        { name: 'Februari', actual: 45000, target: 50000 },
+        { name: 'Maret', actual: 43000, target: 49000 },
+        { name: 'April', actual: 41500, target: 48000 },
+        { name: 'Mei', actual: 39800, target: 47000 },
+        { name: 'Juni', actual: 38200, target: 46000 }
+      ],
+      tableTitle: 'Live Command Center Telemetri Armada Truk (Real-Time Live Feed)',
+      tableHeaders: ['No Polisi / Unit', 'Jenis Armada', 'Nama Driver', 'Lokasi & Kecepatan', 'Status Mesin & BBM', 'Status AI'],
+      tableRows: [
+        { 'No Polisi / Unit': 'B 9821 UXT (TR-04)', 'Jenis Armada': 'Truk Fuso Box (12 Ton)', 'Nama Driver': 'Bambang Riyadi', 'Lokasi & Kecepatan': 'Tol Cipali KM 102 (78 km/jam)', 'Status Mesin & BBM': 'IGN ON | Solar 74% (180L)', 'Status AI': 'Optimal - Eco Driving' },
+        { 'No Polisi / Unit': 'B 9132 FX (TR-12)', 'Jenis Armada': 'Tronton Wingbox (24 Ton)', 'Nama Driver': 'Agus Sulistyo', 'Lokasi & Kecepatan': 'Rest Area KM 57 (0 km/jam)', 'Status Mesin & BBM': 'IGN OFF | Solar 88% (320L)', 'Status AI': 'Parkir Aman (Geofence OK)' },
+        { 'No Polisi / Unit': 'B 9445 TY (TR-09)', 'Jenis Armada': 'Dump Truck 10-Roda', 'Nama Driver': 'Dedi Wahyudi', 'Lokasi & Kecepatan': 'Jalur Tambang Site A (42 km/jam)', 'Status Mesin & BBM': 'IGN ON | Solar 45% (110L)', 'Status AI': '⚠️ Harsh Braking Alert (2x)' }
+      ],
+      aiInsightBanner: '💡 AI Fleet Security Alert: Unit TR-18 terdeteksi parkir di luar geofence resmi dengan konsumsi BBM normal. Seluruh 124 unit lainnya beroperasi dengan efisiensi solar prima.'
+    },
+    benefits: [
+      'Visibilitas posisi dan status armada secara real-time 24/7 di seluruh Indonesia.',
+      'Sensor solar anti-siphoning mengeliminasi kecurangan dan kebocoran BBM.',
+      'Driver scorecard menurunkan risiko kecelakaan dan memperpanjang umur armada.',
+      'Siklus hidup ban dan jadwal ganti oli terjaga presisi berbasis data odometer digital.'
+    ],
+    useCases: [
+      {
+        id: 'ucfms1',
+        title: 'Deteksi Siphoning Solar & Efisiensi Bahan Bakar Truk Berat',
+        scenario: 'Sebuah perusahaan kargo ekspedisi dengan 80 unit truk sering mengalami selisih klaim solar hingga puluhan juta per bulan.',
+        aiRole: 'AI memetakan telemetri sensor BBM ultrasonik dan mendeteksi anomali penurunan solar 40L secara instan saat truk parkir di bahu jalan tak resmi.',
+        outcome: 'Perusahaan berhasil membuktikan kecurangan oknum, memangkas biaya bahan bakar 22%, dan menghemat Rp 68 juta setiap bulannya.'
+      }
+    ],
+    integrations: [
+      'IoT GPS Tracker (Teltonika, Ruptela, Queclink, Meitrack)',
+      'Capacitive & Ultrasonic Fuel Level Sensors (RS485/BLE)',
+      'OBD-II / J1939 CAN-bus Vehicle Telemetry',
+      'Dashcam AI (ADAS & Driver Fatigue DMS Camera)',
+      'Google Maps & HERE Routing Engine API',
+      'Integration ERP / Accounting (SAP, Accurate, Jurnal)'
+    ],
+    technologies: [
+      { category: 'Frontend', stack: ['React 18', 'Tailwind CSS', 'Live Mapbox GL Telemetry', 'Driver Mobile PWA'] },
+      { category: 'Backend', stack: ['Node.js', 'Express.js', 'PostgreSQL / TimescaleDB Time-Series', 'MQTT / TCP Telematics Broker'] }
+    ],
+    relatedSlugs: ['logistics', 'distributor', 'mining', 'manufacturing'],
+    cta: { buildText: 'Bangun Software Fleet Management', consultText: 'Konsultasi Solusi Armada', estimateText: 'Hitung Estimasi Biaya FMS' }
+  },
+
   // 19. ENTERPRISE
   {
     slug: 'enterprise',
@@ -1785,7 +1914,15 @@ const ALIAS_MAP: Record<string, string> = {
   'beauty-clinic': 'aesthetic-clinic',
   'estetika': 'aesthetic-clinic',
   'aesthetic': 'aesthetic-clinic',
-  'aesthetic_clinic': 'aesthetic-clinic'
+  'aesthetic_clinic': 'aesthetic-clinic',
+  'fleet': 'fleet-management',
+  'fleet-management': 'fleet-management',
+  'fleet_management': 'fleet-management',
+  'armada': 'fleet-management',
+  'fms': 'fleet-management',
+  'truk': 'fleet-management',
+  'kendaraan': 'fleet-management',
+  'fleet-tracking': 'fleet-management'
 };
 
 export class IndustrySolutionsService {

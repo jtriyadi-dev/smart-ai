@@ -243,6 +243,17 @@ export const INDUSTRY_SOLUTIONS: IndustrySolution[] = [
     impactMetrics: 'Kecepatan Processing Order +45%'
   },
   {
+    id: 'fleet',
+    title: 'Fleet Management System (FMS)',
+    category: 'operations',
+    iconName: 'Truck',
+    shortDesc: 'Sistem Manajemen Armada & Truk: Live GPS Telemetri, Sensor BBM Solar, Driver Safety Scorecard, & e-Surat Jalan.',
+    fullDesc: 'Platform telematika dan operasional armada terpadu untuk perusahaan logistik, distribusi, pertambangan, dan rental kendaraan. Dilengkapi pelacakan GPS real-time, sensor anti-pencurian solar, evaluasi keselamatan sopir (harsh braking/speeding), penjadwalan servis odometer & ban, serta e-POD surat jalan digital.',
+    keyFeatures: ['Live GPS Telematics & Geofencing Command Center', 'Sensor BBM & Deteksi Siphoning Solar', 'Driver Behavior & Safety Scorecard', 'Jadwal Servis Odometer & Manajemen Ban', 'Surat Jalan Digital & e-POD Mobile Driver'],
+    aiCapability: 'AI Predictive Fleet Maintenance & Multi-Stop Route Fuel Optimizer',
+    impactMetrics: 'Penghematan Biaya BBM 22% & Zero Breakdown'
+  },
+  {
     id: 'distributor',
     title: 'Distributor Management System',
     category: 'commerce',

@@ -556,6 +556,69 @@ export const INDUSTRY_SECTOR_CONFIGS: IndustrySectorConfig[] = [
     recommendedCatalogCategories: ['Module', 'Integration', 'AI']
   },
   {
+    id: 'fleet_management',
+    name: 'Fleet Management System (FMS & Telematika)',
+    category: 'Logistik & Transportasi',
+    iconName: 'Truck',
+    tagline: 'Sistem manajemen armada pintar: Live GPS tracking, sensor solar anti-siphoning, driver behavior scorecard, manajemen ban, dan AI maintenance.',
+    complexityLevel: 'Medium-High',
+    priceMultiplier: 1.08,
+    packagePrices: {
+      MVP: 115000000,
+      Standard: 220000000,
+      Professional: 360000000,
+      Enterprise: 580000000
+    },
+    monthlyPackagePrices: {
+      MVP: 6500000,
+      Standard: 12500000,
+      Professional: 21000000,
+      Enterprise: 34000000
+    },
+    packageDescriptions: {
+      MVP: 'Pencatatan data armada, live GPS tracking posisi dasar, data sopir, dan log trip perjalanan sederhana.',
+      Standard: 'Live GPS Telematics command center, status kontak mesin (IGN), sensor BBM solar, driver safety scorecard, dan e-POD.',
+      Professional: 'Sensor anti-siphoning solar AI, tyre lifecycle & odometer scheduler, multi-drop dispatch sequencer, dan driver scorecard.',
+      Enterprise: 'Enterprise telematics multi-branch, AI vehicle breakdown forecaster, CAN-bus/OBD-II telemetry, dan integrasi ERP/WMS.'
+    },
+    monthlyPackageDescriptions: {
+      MVP: 'Cloud fleet tracking dasar, storage histori perjalanan GPS 30 hari, dan dukungan teknis harian.',
+      Standard: 'Managed GPS Telematics & Fuel Gateway, notifikasi WhatsApp overspeed & deviasi rute, dan backup data.',
+      Professional: 'AI Fuel Siphoning & Driver Safety Cloud, tyre management engine, dan prioritas support 4 jam.',
+      Enterprise: 'High-Availability Fleet Cloud Cluster, CAN-bus bridge telemetry, 99.9% uptime SLA, dan dedicated support 24/7.'
+    },
+    packageModules: {
+      MVP: [
+        'Live GPS Tracking Peta Sederhana',
+        'Master Data Armada, Truk & Driver',
+        'Log Riwayat Perjalanan & Trip Record'
+      ],
+      Standard: [
+        'Live GPS Telematics & Geofencing Command Center',
+        'Status Kontak Mesin (IGN ON/OFF) & Speed Alert',
+        'Sensor Level BBM Solar & Monitoring KM/Liter',
+        'Driver Safety Scorecard (Harsh Braking & Overspeed)',
+        'Surat Jalan Digital & e-POD Mobile Driver'
+      ],
+      Professional: [
+        'AI Fuel Siphoning & Alarm Pencurian Solar Real-Time',
+        'Manajemen Siklus Hidup Ban (Tyre Lifecycle & Tread Depth)',
+        'Jadwal Servis Berkala & Odometer Maintenance Scheduler',
+        'Multi-Drop Route Sequencer & ETA Dispatch Optimizer',
+        'Kalkulator Uang Jalan, Klaim Tol & Analisis Cost/KM'
+      ],
+      Enterprise: [
+        'Multi-Branch Enterprise Fleet Telematics Hub',
+        'AI Predictive Vehicle Breakdown & Fault Forecaster',
+        'OBD-II / J1939 CAN-bus Engine Diagnostics Bridge',
+        'Dashcam AI ADAS & Driver Fatigue DMS Integration',
+        'Enterprise ERP & Supply Chain Accounting Bridge'
+      ]
+    },
+    complianceStandards: ['Kemenhub Regulasi GPS Angkutan Barang', 'ISO 39001 Road Traffic Safety Management', 'Standar Keselamatan Transportasi Darat'],
+    recommendedCatalogCategories: ['Module', 'Integration', 'AI', 'Security']
+  },
+  {
     id: 'fintech_banking',
     name: 'Perbankan & Financial Technology (Fintech)',
     category: 'Keuangan & Fintech',
