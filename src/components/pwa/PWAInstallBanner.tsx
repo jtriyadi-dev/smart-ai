@@ -41,7 +41,7 @@ export const PWAInstallBanner: React.FC<PWAInstallBannerProps> = ({ onOpenModal 
   return (
     <aside 
       aria-label="Notifikasi PWA Install"
-      className="fixed bottom-20 left-4 right-4 sm:left-6 sm:right-auto sm:max-w-sm z-40 animate-in slide-in-from-bottom-5 duration-300"
+      className="fixed bottom-20 sm:bottom-24 lg:bottom-6 left-4 right-4 sm:left-6 sm:right-auto sm:max-w-sm z-40 animate-in slide-in-from-bottom-5 duration-300"
     >
       <div className="relative p-3.5 sm:p-4 rounded-2xl bg-[#090d16]/95 border border-cyan-500/30 backdrop-blur-xl shadow-xl shadow-cyan-950/40 text-slate-100 flex items-center gap-3">
         {/* Glow */}

@@ -18,7 +18,7 @@ export const WhatsAppFloatingButton: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-20 lg:bottom-6 left-4 sm:left-6 z-50">
       
       {/* Popover Window */}
       {isOpen && (

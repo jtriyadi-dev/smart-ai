@@ -126,6 +126,7 @@ import { PWAInstallBanner } from './components/pwa/PWAInstallBanner';
 import { PWAInstallModal } from './components/pwa/PWAInstallModal';
 import { OfflineIndicator } from './components/pwa/OfflineIndicator';
 import { PWAUpdateToast } from './components/pwa/PWAUpdateToast';
+import { MobileNativeBottomBar } from './components/common/MobileNativeBottomBar';
 
 import { ServiceItem, IndustrySolution, PortfolioItem, AIScopeBlueprint, LeadFormData } from './types';
 
@@ -944,6 +945,13 @@ export default function App() {
 
       {/* Floating WhatsApp Widget */}
       <FloatingWhatsApp />
+
+      {/* Mobile Native Bottom Tab Bar for Android & iOS */}
+      <MobileNativeBottomBar
+        currentPath={currentPath}
+        onNavigate={navigate}
+        onOpenConsultation={navigateToConsultationForm}
+      />
 
       {/* SMART-AI.ID AI Floating Chatbot Widget */}
       <FloatingChatbot currentPath={currentPath} onNavigate={navigate} />

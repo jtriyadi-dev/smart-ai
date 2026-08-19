@@ -12,6 +12,7 @@ import { WhyChooseUsSection } from '../components/WhyChooseUsSection';
 import { BeforeAfterSection } from '../components/BeforeAfterSection';
 import { AIValueSection } from '../components/AIValueSection';
 import { TestimonialsSection } from '../components/TestimonialsSection';
+import { DeviceCompatibilityShowcase } from '../components/common/DeviceCompatibilityShowcase';
 import { FAQSection } from '../components/FAQSection';
 import { ContactCTA } from '../components/ContactCTA';
 import { LeadFormSection } from '../components/LeadFormSection';
@@ -97,7 +98,10 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* 13. Testimonial & Kepercayaan Klien */}
       <TestimonialsSection onOpenConsultation={onOpenConsultation} />
 
-      {/* 14. FAQ Section (10 Questions) */}
+      {/* 14. Universal Multi-Device Native View Compatibility (PC, Laptop, Tablet, Android, iOS) */}
+      <DeviceCompatibilityShowcase />
+
+      {/* 15. FAQ Section (10 Questions) */}
       <FAQSection
         onOpenConsultation={onOpenConsultation}
       />

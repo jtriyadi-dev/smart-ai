@@ -1,6 +1,7 @@
 import React from 'react';
 import { TECH_STACK } from '../data/content';
 import { Cpu, CheckCircle2, ShieldCheck, Sparkles, Terminal } from 'lucide-react';
+import { DeviceCompatibilityShowcase } from '../components/common/DeviceCompatibilityShowcase';
 
 export const TechPage: React.FC = () => {
   const categories = [
@@ -67,6 +68,11 @@ export const TechPage: React.FC = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* Cross-Platform Device Architecture & Compatibility */}
+        <div className="mt-16">
+          <DeviceCompatibilityShowcase />
         </div>
 
         {/* Cloud Security Banner */}

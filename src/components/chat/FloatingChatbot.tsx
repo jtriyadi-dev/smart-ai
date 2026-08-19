@@ -173,7 +173,7 @@ export const FloatingChatbot: React.FC<FloatingChatbotProps> = ({ currentPath = 
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 group flex items-center gap-3 p-3.5 rounded-full bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 border border-cyan-300/30"
+          className="fixed bottom-20 lg:bottom-6 right-4 sm:right-6 z-50 group flex items-center gap-2.5 sm:gap-3 p-3 sm:p-3.5 rounded-full bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 border border-cyan-300/30"
           aria-label="Open AI Assistant Chatbot"
         >
           <div className="relative flex items-center justify-center">
