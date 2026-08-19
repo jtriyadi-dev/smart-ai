@@ -1,0 +1,78 @@
+{
+  "name": "SMART-AI.ID | Jasa Pembuatan Aplikasi Web Berbasis AI",
+  "short_name": "SMART-AI.ID",
+  "description": "Platform Solusi Pembuatan Aplikasi Web Custom Berbasis AI, Sistem Informasi Enterprise & Automasi Bisnis Indonesia",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "window-controls-overlay"],
+  "background_color": "#07090e",
+  "theme_color": "#07090e",
+  "orientation": "any",
+  "lang": "id",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "utilities", "developer tools"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "AI App Builder",
+      "short_name": "AI Builder",
+      "description": "Rancang cetak biru aplikasi bisnis dengan AI",
+      "url": "/ai-app-builder",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Solusi Industri",
+      "short_name": "Solusi",
+      "description": "Jelajahi solusi software 20+ industri",
+      "url": "/solutions",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Katalog Portfolio",
+      "short_name": "Portfolio",
+      "description": "Lihat konsep dan proyek digital kami",
+      "url": "/portfolio",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Konsultasi WhatsApp",
+      "short_name": "WhatsApp",
+      "description": "Konsultasi langsung dengan tim teknis",
+      "url": "/contact",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "prefer_related_applications": false
+}

@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { Bot, Menu, X, ArrowRight, MessageSquare, Sparkles, User, ShieldCheck, Cpu, Workflow, Boxes, Calculator, FileText, FileCheck, BookOpen, Layers, Globe } from 'lucide-react';
+import { Bot, Menu, X, ArrowRight, MessageSquare, Sparkles, User, ShieldCheck, Cpu, Workflow, Boxes, Calculator, FileText, FileCheck, BookOpen, Layers, Globe, Download, Smartphone } from 'lucide-react';
+import { usePWA } from '../hooks/usePWA';
 
 interface NavbarProps {
   currentPath: string;
   onNavigate: (path: string) => void;
   onOpenConsultation: () => void;
+  onOpenPWAInstall?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenConsultation }) => {
+export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenConsultation, onOpenPWAInstall }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { isInstalled, isInstallable, installApp } = usePWA();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -202,6 +205,21 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenC
               <span>AI Architect</span>
             </button>
 
+            {/* PWA Install Trigger / Status */}
+            {!isInstalled && (
+              <button
+                onClick={() => {
+                  if (onOpenPWAInstall) onOpenPWAInstall();
+                  else if (isInstallable) installApp();
+                }}
+                className="hidden xl:flex px-3 py-1.5 text-xs font-mono font-semibold text-cyan-300 hover:text-white bg-cyan-950/60 hover:bg-cyan-900/80 border border-cyan-500/40 rounded-lg transition-all items-center gap-1.5 cursor-pointer shadow-sm shadow-cyan-500/10"
+                title="Install SMART-AI.ID Progressive Web App"
+              >
+                <Download className="w-3.5 h-3.5 text-cyan-400" />
+                <span>Install PWA</span>
+              </button>
+            )}
+
             <button
               onClick={() => handleLinkClick('/login')}
               className="px-3 py-1.5 text-xs font-mono font-semibold text-slate-300 hover:text-white bg-slate-900/80 border border-slate-800 hover:border-slate-700 rounded-lg transition-all flex items-center gap-1.5 cursor-pointer"
@@ -304,6 +322,20 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenC
 
           {/* Bottom Actions */}
           <div className="pt-6 mt-6 border-t border-slate-800 max-w-lg mx-auto w-full space-y-3">
+            {!isInstalled && (
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  if (onOpenPWAInstall) onOpenPWAInstall();
+                  else if (isInstallable) installApp();
+                }}
+                className="w-full py-3 px-4 rounded-xl bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 text-xs font-bold flex items-center justify-center gap-2 hover:bg-cyan-900 transition-colors shadow-lg shadow-cyan-950/40"
+              >
+                <Download className="w-4 h-4 text-cyan-400" />
+                <span>Install Aplikasi SMART-AI (PWA)</span>
+              </button>
+            )}
+
             <button
               onClick={() => {
                 setMobileMenuOpen(false);

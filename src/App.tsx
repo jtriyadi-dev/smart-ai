@@ -121,10 +121,18 @@ import { CustomerProfilePage } from './pages/portal/CustomerProfilePage';
 import { CustomerSettingsPage } from './pages/portal/CustomerSettingsPage';
 import { CustomerNotificationsPage } from './pages/portal/CustomerNotificationsPage';
 
+// PWA Mode Components
+import { PWAInstallBanner } from './components/pwa/PWAInstallBanner';
+import { PWAInstallModal } from './components/pwa/PWAInstallModal';
+import { OfflineIndicator } from './components/pwa/OfflineIndicator';
+import { PWAUpdateToast } from './components/pwa/PWAUpdateToast';
+
 import { ServiceItem, IndustrySolution, PortfolioItem, AIScopeBlueprint, LeadFormData } from './types';
 
 export default function App() {
   const { currentPath, navigate } = useRouter();
+
+  const [pwaModalOpen, setPwaModalOpen] = useState(false);
 
   const [modalData, setModalData] = useState<{
     item: ServiceItem | IndustrySolution | PortfolioItem | null;
@@ -909,6 +917,8 @@ export default function App() {
       <div className="min-h-screen bg-[#06090e] text-slate-100 font-sans selection:bg-cyan-500/30 selection:text-cyan-200">
         {renderCurrentPage()}
         <NotificationToastContainer />
+        <OfflineIndicator />
+        <PWAUpdateToast />
       </div>
     );
   }
@@ -921,6 +931,7 @@ export default function App() {
         currentPath={currentPath}
         onNavigate={navigate}
         onOpenConsultation={navigateToConsultationForm}
+        onOpenPWAInstall={() => setPwaModalOpen(true)}
       />
 
       {/* Main Page Content */}
@@ -939,6 +950,12 @@ export default function App() {
 
       {/* Global Realtime Notification Toast Container */}
       <NotificationToastContainer />
+
+      {/* PWA Mode Floating Banner & Modals */}
+      <PWAInstallBanner onOpenModal={() => setPwaModalOpen(true)} />
+      <PWAInstallModal isOpen={pwaModalOpen} onClose={() => setPwaModalOpen(false)} />
+      <OfflineIndicator />
+      <PWAUpdateToast />
 
       {/* Detail Specs Modal */}
       <DetailModal

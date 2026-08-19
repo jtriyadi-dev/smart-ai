@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07090e" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#032b43" />
+    </linearGradient>
+
+    <!-- Accent Gradient Cyan-Emerald -->
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+
+    <!-- Glowing Core Gradient -->
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Rounded Canvas -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+  <rect width="504" height="504" x="4" y="4" rx="108" fill="none" stroke="rgba(56, 189, 248, 0.25)" stroke-width="3" />
+
+  <!-- Background Tech Grid Lines -->
+  <g opacity="0.15" stroke="#38bdf8" stroke-width="2">
+    <line x1="80" y1="80" x2="432" y2="80" />
+    <line x1="80" y1="256" x2="432" y2="256" />
+    <line x1="80" y1="432" x2="432" y2="432" />
+    <line x1="80" y1="80" x2="80" y2="432" />
+    <line x1="256" y1="80" x2="256" y2="432" />
+    <line x1="432" y1="80" x2="432" y2="432" />
+  </g>
+
+  <!-- Outer Glowing Hexagon / AI Node -->
+  <polygon points="256,76 408,164 408,348 256,436 104,348 104,164" fill="none" stroke="url(#cyanGrad)" stroke-width="8" filter="url(#neonGlow)" />
+
+  <!-- Inner Hexagon Matrix -->
+  <polygon points="256,120 370,186 370,326 256,392 142,326 142,186" fill="rgba(15, 23, 42, 0.75)" stroke="rgba(56, 189, 248, 0.4)" stroke-width="4" />
+
+  <!-- Center AI Brain / Neural Core Symbol -->
+  <!-- Circuit Nodes & Connections -->
+  <g stroke="url(#cyanGrad)" stroke-width="6" stroke-linecap="round">
+    <!-- Top to Center -->
+    <line x1="256" y1="140" x2="256" y2="200" />
+    <!-- Bottom to Center -->
+    <line x1="256" y1="312" x2="256" y2="372" />
+    <!-- Left to Center -->
+    <line x1="165" y1="256" x2="215" y2="256" />
+    <!-- Right to Center -->
+    <line x1="297" y1="256" x2="347" y2="256" />
+    <!-- Diagonals -->
+    <line x1="190" y1="190" x2="225" y2="225" />
+    <line x1="322" y1="190" x2="287" y2="225" />
+    <line x1="190" y1="322" x2="225" y2="287" />
+    <line x1="322" y1="322" x2="287" y2="287" />
+  </g>
+
+  <!-- Glowing Outer Node Circles -->
+  <circle cx="256" cy="140" r="10" fill="#38bdf8" />
+  <circle cx="256" cy="372" r="10" fill="#10b981" />
+  <circle cx="165" cy="256" r="10" fill="#38bdf8" />
+  <circle cx="347" cy="256" r="10" fill="#10b981" />
+  <circle cx="190" cy="190" r="8" fill="#60a5fa" />
+  <circle cx="322" cy="190" r="8" fill="#38bdf8" />
+  <circle cx="190" cy="322" r="8" fill="#06b6d4" />
+  <circle cx="322" cy="322" r="8" fill="#10b981" />
+
+  <!-- Center Glowing Core Node -->
+  <circle cx="256" cy="256" r="38" fill="url(#cyanGrad)" filter="url(#neonGlow)" />
+  <circle cx="256" cy="256" r="24" fill="#07090e" />
+  
+  <!-- Stylized Monogram S / Sparkle at center -->
+  <path d="M 248 238 C 248 232, 264 232, 264 242 C 264 252, 248 250, 248 262 C 248 274, 264 274, 264 266" fill="none" stroke="#38bdf8" stroke-width="5" stroke-linecap="round" />
+
+  <!-- Bottom Brand Text -->
+  <text x="256" y="472" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="4">SMART-AI.ID</text>
+</svg>

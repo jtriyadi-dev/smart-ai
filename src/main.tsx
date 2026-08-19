@@ -2,6 +2,10 @@ import React, { StrictMode, Component, ErrorInfo, ReactNode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
+import { PWAService } from './services/pwaService';
+
+// Initialize PWA Service Worker
+PWAService.registerServiceWorker();
 
 interface GlobalErrorState {
   hasError: boolean;
