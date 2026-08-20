@@ -93,13 +93,16 @@ class PWAServiceClass {
       return;
     }
 
-    // Only register in production or when explicitly enabled
+    // Only register after window load to prevent blocking initial critical render
     window.addEventListener('load', () => {
+      // Record if page had a controller when it first started
+      const hadControllerAtStart = Boolean(navigator.serviceWorker.controller);
+
       navigator.serviceWorker
         .register('/sw.js', { scope: '/' })
         .then((reg) => {
           this.registration = reg;
-          console.log('[PWA] Service Worker registered with scope:', reg.scope);
+          console.log('[PWA] Service Worker active with scope:', reg.scope);
 
           // Check for waiting SW (pending update)
           if (reg.waiting) {
@@ -120,13 +123,13 @@ class PWAServiceClass {
           });
         })
         .catch((err) => {
-          console.warn('[PWA] Service Worker registration failed:', err);
+          console.warn('[PWA] Service Worker registration skipped/failed:', err);
         });
 
-      // Handle controller change (reloads page when new worker takes over)
+      // Only reload on controller change if there was ALREADY an active controller (true app update)
       let refreshing = false;
       navigator.serviceWorker.addEventListener('controllerchange', () => {
-        if (!refreshing) {
+        if (!refreshing && hadControllerAtStart) {
           refreshing = true;
           window.location.reload();
         }

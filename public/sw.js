@@ -1,42 +1,41 @@
 /**
  * SMART-AI.ID Progressive Web App (PWA) Service Worker
- * Version: 1.0.0
- * Architecture: Stale-While-Revalidate + Network-First (API) + Offline Resilience
+ * Version: 1.0.2 - High Resilience & Mobile Fix
  */
 
-const CACHE_NAME = 'smart-ai-pwa-v1.0.0';
-const DYNAMIC_CACHE = 'smart-ai-dynamic-v1.0.0';
+const CACHE_NAME = 'smart-ai-cache-v1.0.2';
+const DYNAMIC_CACHE = 'smart-ai-dyn-v1.0.2';
 
-// Essential core shell assets for instant offline booting
+// Essential core shell assets
 const PRECACHE_ASSETS = [
   '/',
   '/index.html',
   '/manifest.json',
   '/manifest.webmanifest',
-  '/icons/icon.svg'
+  '/icons/icon.svg',
+  '/icons/favicon.png'
 ];
 
-// Install Event: Precaching App Shell
+// Install Event: Precaching App Shell safely
 self.addEventListener('install', (event) => {
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(PRECACHE_ASSETS).catch((err) => {
-        console.warn('[PWA SW] Precache warning (non-fatal):', err);
+        console.warn('[PWA SW] Precache warning:', err);
       });
-    }).then(() => {
-      return self.skipWaiting();
     })
   );
 });
 
-// Activate Event: Cleanup Old Cache Generations
+// Activate Event: Cleanup Old Caches and take immediate control
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((cache) => {
           if (cache !== CACHE_NAME && cache !== DYNAMIC_CACHE) {
-            console.log('[PWA SW] Deleting obsolete cache:', cache);
+            console.log('[PWA SW] Clearing old cache:', cache);
             return caches.delete(cache);
           }
         })
@@ -47,111 +46,145 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch Event: Intelligent Strategy Routing
+// Fetch Event: Robust Multi-Device Strategy
 self.addEventListener('fetch', (event) => {
-  const url = new URL(event.request.url);
+  const request = event.request;
 
-  // Skip non-GET requests (e.g. POST, PUT, DELETE)
-  if (event.request.method !== 'GET') {
+  // Only handle GET requests
+  if (request.method !== 'GET') {
     return;
   }
 
-  // 1. API Endpoints Strategy: Network-First with Offline Fallback
-  if (url.pathname.startsWith('/api/')) {
+  const url = new URL(request.url);
+
+  // 1. NEVER intercept Vite / Dev Server / WebSocket / Extension scripts
+  if (
+    url.pathname.startsWith('/@') ||
+    url.pathname.startsWith('/src/') ||
+    url.pathname.startsWith('/node_modules/') ||
+    url.pathname.includes('hot-update') ||
+    url.pathname.endsWith('.tsx') ||
+    url.pathname.endsWith('.ts') ||
+    url.pathname.endsWith('.jsx') ||
+    url.protocol.startsWith('chrome-extension') ||
+    url.protocol.startsWith('ws')
+  ) {
+    return; // Pass through directly to browser network
+  }
+
+  // 2. Navigation Request (HTML page loads) - Network-First with Cache Fallback
+  if (request.mode === 'navigate') {
     event.respondWith(
-      fetch(event.request)
-        .then((response) => {
-          // Clone and cache successful GET responses
-          if (response && response.status === 200) {
-            const resClone = response.clone();
-            caches.open(DYNAMIC_CACHE).then((cache) => {
-              cache.put(event.request, resClone);
+      fetch(request)
+        .then((networkResponse) => {
+          if (networkResponse && networkResponse.status === 200) {
+            const resClone = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(request, resClone);
             });
           }
-          return response;
+          return networkResponse;
         })
-        .catch(() => {
-          return caches.match(event.request).then((cachedResponse) => {
-            if (cachedResponse) {
-              return cachedResponse;
-            }
-            // Return synthetic offline response for API queries
-            return new Response(
-              JSON.stringify({
-                offline: true,
-                message: 'Anda sedang berada dalam mode offline. Data akan disinkronkan saat koneksi internet kembali.',
-                timestamp: new Date().toISOString()
-              }),
-              {
-                status: 200,
-                headers: { 'Content-Type': 'application/json' }
-              }
-            );
-          });
+        .catch(async () => {
+          // If network fails (offline), load cached app shell
+          const cachedIndex = await caches.match('/index.html');
+          if (cachedIndex) return cachedIndex;
+          const cachedRoot = await caches.match('/');
+          if (cachedRoot) return cachedRoot;
+          return caches.match(request);
         })
     );
     return;
   }
 
-  // 2. Static Images & Fonts: Cache-First Strategy
+  // 3. API Requests - Network First with JSON Offline Fallback
+  if (url.pathname.startsWith('/api/')) {
+    event.respondWith(
+      fetch(request)
+        .then((response) => {
+          if (response && response.status === 200) {
+            const resClone = response.clone();
+            caches.open(DYNAMIC_CACHE).then((cache) => {
+              cache.put(request, resClone);
+            });
+          }
+          return response;
+        })
+        .catch(async () => {
+          const cached = await caches.match(request);
+          if (cached) return cached;
+          return new Response(
+            JSON.stringify({
+              offline: true,
+              message: 'Mode offline aktif.',
+              timestamp: new Date().toISOString()
+            }),
+            {
+              status: 200,
+              headers: { 'Content-Type': 'application/json' }
+            }
+          );
+        })
+    );
+    return;
+  }
+
+  // 4. Static Images, Fonts, and Compiled Assets (/assets/*)
   if (
-    url.pathname.match(/\.(png|jpg|jpeg|svg|webp|gif|ico|woff|woff2|ttf|eot)$/) ||
+    url.pathname.startsWith('/assets/') ||
+    url.pathname.startsWith('/icons/') ||
+    url.pathname.match(/\.(png|jpg|jpeg|svg|webp|gif|ico|woff|woff2|ttf|css)$/) ||
     url.hostname.includes('fonts.googleapis.com') ||
     url.hostname.includes('fonts.gstatic.com') ||
     url.hostname.includes('images.unsplash.com')
   ) {
     event.respondWith(
-      caches.match(event.request).then((cachedResponse) => {
+      caches.match(request).then((cachedResponse) => {
         if (cachedResponse) {
+          // Return cached, but revalidate in background if online
+          fetch(request)
+            .then((networkRes) => {
+              if (networkRes && networkRes.status === 200) {
+                caches.open(DYNAMIC_CACHE).then((cache) => cache.put(request, networkRes));
+              }
+            })
+            .catch(() => {});
           return cachedResponse;
         }
-        return fetch(event.request)
+
+        return fetch(request)
           .then((networkResponse) => {
             if (networkResponse && networkResponse.status === 200) {
               const resClone = networkResponse.clone();
               caches.open(DYNAMIC_CACHE).then((cache) => {
-                cache.put(event.request, resClone);
+                cache.put(request, resClone);
               });
             }
             return networkResponse;
           })
           .catch(() => {
-            // Fallback for missing images
-            return caches.match('/icons/icon.svg');
+            if (url.pathname.match(/\.(png|jpg|jpeg|svg|webp|gif)$/)) {
+              return caches.match('/icons/icon.svg');
+            }
+            return new Response('', { status: 404, statusText: 'Not found offline' });
           });
       })
     );
     return;
   }
 
-  // 3. App Shell Navigation & Pages: Stale-While-Revalidate with SPA Fallback
+  // 5. Default Fallback - Pass-through with Network Safety
   event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      const fetchPromise = fetch(event.request)
-        .then((networkResponse) => {
-          if (networkResponse && networkResponse.status === 200) {
-            const resClone = networkResponse.clone();
-            caches.open(DYNAMIC_CACHE).then((cache) => {
-              cache.put(event.request, resClone);
-            });
-          }
-          return networkResponse;
-        })
-        .catch(() => {
-          // If offline and request is an HTML page navigation, fallback to root SPA shell
-          if (event.request.mode === 'navigate') {
-            return caches.match('/index.html').then((indexCached) => {
-              return indexCached || caches.match('/');
-            });
-          }
-        });
-
-      return cachedResponse || fetchPromise;
+    fetch(request).catch(() => {
+      return caches.match(request).then((res) => {
+        if (res) return res;
+        return new Response('', { status: 503, statusText: 'Service Unavailable' });
+      });
     })
   );
 });
 
-// Message Listener for manual update skip waiting
+// Skip waiting message listener
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();

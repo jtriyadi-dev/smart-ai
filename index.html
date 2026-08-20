@@ -39,18 +39,72 @@
   </head>
   <body class="bg-[#07090e] text-slate-100 font-sans antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
     <div id="root">
-      <div style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #06090e; color: #f8fafc; font-family: system-ui, -apple-system, sans-serif; text-align: center; padding: 20px;">
-        <div style="width: 44px; height: 44px; border: 3px solid rgba(56, 189, 248, 0.2); border-top-color: #38bdf8; border-radius: 50%; animation: spin 0.8s linear infinite; margin-bottom: 16px;"></div>
-        <div style="font-size: 16px; font-weight: 700; letter-spacing: 0.05em; color: #38bdf8;">SMART-AI.ID</div>
-        <div style="font-size: 12px; color: #94a3b8; margin-top: 6px;">Memuat sistem...</div>
+      <div id="loading-fallback" style="min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #07090e; color: #f8fafc; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; text-align: center; padding: 24px; box-sizing: border-box;">
+        <div style="position: relative; width: 48px; height: 48px; margin-bottom: 20px;">
+          <div style="width: 48px; height: 48px; border: 3px solid rgba(56, 189, 248, 0.15); border-top-color: #00d2fe; border-radius: 50%; animation: smartai-spin 0.75s cubic-bezier(0.4, 0, 0.2, 1) infinite;"></div>
+          <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
+            <div style="width: 8px; height: 8px; background: #00d2fe; border-radius: 50%; box-shadow: 0 0 10px #00d2fe;"></div>
+          </div>
+        </div>
+        <div style="font-size: 18px; font-weight: 800; letter-spacing: 0.04em; color: #ffffff; margin-bottom: 4px;">SMART-AI.ID</div>
+        <div id="loading-text" style="font-size: 13px; color: #94a3b8; margin-bottom: 16px;">Memuat sistem...</div>
+        
+        <!-- Auto Recovery Button (Appears if network or mobile cache hangs) -->
+        <div id="loading-recovery" style="display: none; max-width: 320px; width: 100%;">
+          <p style="font-size: 12px; color: #cbd5e1; margin-bottom: 12px; line-height: 1.4;">Koneksi memerlukan pembaruan cache atau sedang menyiapkan modul.</p>
+          <button id="btn-force-reload" onclick="forceReloadApp()" style="width: 100%; padding: 10px 16px; border-radius: 12px; background: linear-gradient(135deg, #00d2fe, #2563eb); border: none; color: #ffffff; font-weight: 600; font-size: 13px; cursor: pointer; box-shadow: 0 4px 14px rgba(0, 210, 254, 0.25);">
+            Buka Aplikasi Sekarang
+          </button>
+        </div>
       </div>
       <style>
-        @keyframes spin {
+        @keyframes smartai-spin {
           to { transform: rotate(360deg); }
         }
       </style>
     </div>
+
+    <!-- Self-Healing Watcher for Mobile Browsers & Stale Service Workers -->
+    <script>
+      function forceReloadApp() {
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(function(regs) {
+            for (var i = 0; i < regs.length; i++) {
+              regs[i].unregister();
+            }
+          });
+        }
+        if ('caches' in window) {
+          caches.keys().then(function(names) {
+            names.forEach(function(name) { caches.delete(name); });
+          });
+        }
+        var url = new URL(window.location.href);
+        url.searchParams.set('_r', Date.now());
+        window.location.replace(url.toString());
+      }
+
+      // If React doesn't replace #loading-fallback within 3.5 seconds, show the manual action button
+      setTimeout(function() {
+        var fb = document.getElementById('loading-fallback');
+        var rec = document.getElementById('loading-recovery');
+        var txt = document.getElementById('loading-text');
+        if (fb && rec) {
+          rec.style.display = 'block';
+          if (txt) txt.textContent = 'Menyiapkan modul aplikasi...';
+        }
+      }, 3500);
+
+      // Catch global startup errors
+      window.addEventListener('error', function(e) {
+        console.warn('[SMART-AI Bootstrap Error]', e);
+        var rec = document.getElementById('loading-recovery');
+        var txt = document.getElementById('loading-text');
+        if (rec) rec.style.display = 'block';
+        if (txt) txt.textContent = 'Mengoptimalkan koneksi...';
+      });
+    </script>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
