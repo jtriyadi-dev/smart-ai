@@ -915,7 +915,7 @@ export default function App() {
 
   if (isStandaloneLayout) {
     return (
-      <div className="min-h-screen bg-[#06090e] text-slate-100 font-sans selection:bg-cyan-500/30 selection:text-cyan-200">
+      <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#06090e] text-slate-100 font-sans selection:bg-cyan-500/30 selection:text-cyan-200">
         {renderCurrentPage()}
         <NotificationToastContainer />
         <OfflineIndicator />
@@ -925,7 +925,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-[#06090e] text-slate-100 font-sans selection:bg-cyan-500/30 selection:text-cyan-200 flex flex-col justify-between">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#06090e] text-slate-100 font-sans selection:bg-cyan-500/30 selection:text-cyan-200 flex flex-col justify-between">
       
       {/* Fixed Sticky Glass Navigation Bar */}
       <Navbar
@@ -936,7 +936,7 @@ export default function App() {
       />
 
       {/* Main Page Content */}
-      <main className="flex-grow">
+      <main className="flex-grow w-full max-w-full overflow-x-hidden">
         {renderCurrentPage()}
       </main>
 

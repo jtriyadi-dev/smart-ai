@@ -31,40 +31,40 @@ export const Hero: React.FC<HeroProps> = ({ onStartConsultation, onOpenAIGenerat
   };
 
   return (
-    <section id="home" className="relative min-h-[90vh] pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-radial-glow bg-tech-grid">
+    <section id="home" className="relative min-h-[90vh] pt-24 pb-14 md:pt-36 md:pb-24 overflow-hidden bg-radial-glow bg-tech-grid w-full">
       
-      {/* Background Ambient Glow Effects */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none"></div>
-      <div className="absolute top-1/3 right-10 w-[450px] h-[450px] bg-cyan-500/10 blur-[130px] rounded-full pointer-events-none"></div>
+      {/* Background Ambient Glow Effects (Contained) */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[700px] h-[320px] sm:h-[500px] bg-blue-600/10 blur-[100px] sm:blur-[150px] rounded-full pointer-events-none"></div>
+      <div className="absolute top-1/3 right-0 sm:right-10 w-[280px] sm:w-[450px] h-[280px] sm:h-[450px] bg-cyan-500/10 blur-[90px] sm:blur-[130px] rounded-full pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           
           {/* Left Column: Headline & Value Proposition */}
-          <div className="lg:col-span-6 text-left space-y-6">
+          <div className="lg:col-span-6 text-left space-y-5 sm:space-y-6">
             
             {/* Small Label Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0d172e] border border-cyan-500/30 text-cyan-300 text-xs font-semibold backdrop-blur-md">
-              <span className="flex h-2 w-2 rounded-full bg-cyan-400 animate-pulse"></span>
-              <Bot className="w-4 h-4 text-cyan-400" />
-              <span className="font-mono text-[11px] tracking-tight uppercase">{heroContent.badgeText}</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-[#0d172e] border border-cyan-500/30 text-cyan-300 text-xs font-semibold backdrop-blur-md max-w-full">
+              <span className="flex h-2 w-2 rounded-full bg-cyan-400 animate-pulse shrink-0"></span>
+              <Bot className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400 shrink-0" />
+              <span className="font-mono text-[10px] sm:text-[11px] tracking-tight uppercase truncate">{heroContent.badgeText}</span>
             </div>
 
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white tracking-tight leading-[1.12]">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white tracking-tight leading-[1.15] break-words">
               {heroContent.headlineMain} <span className="text-gradient-cyan">{heroContent.headlineHighlight}</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed font-normal">
+            <p className="text-sm sm:text-lg text-slate-300 max-w-2xl leading-relaxed font-normal break-words">
               {heroContent.subheadline}
             </p>
 
             {/* Primary & Secondary CTAs */}
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full">
               <button
                 onClick={onStartConsultation}
-                className="btn-primary px-8 py-3.5 text-sm font-bold flex items-center justify-center gap-2.5 glow-primary-cta cursor-pointer"
+                className="btn-primary w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-bold flex items-center justify-center gap-2.5 glow-primary-cta cursor-pointer"
               >
                 <Sparkles className="w-4 h-4 text-cyan-200" />
                 <span>{heroContent.primaryCtaText}</span>
@@ -73,14 +73,14 @@ export const Hero: React.FC<HeroProps> = ({ onStartConsultation, onOpenAIGenerat
 
               <button
                 onClick={() => scrollToSection('#layanan')}
-                className="btn-secondary px-7 py-3.5 text-sm font-semibold flex items-center justify-center gap-2 cursor-pointer"
+                className="btn-secondary w-full sm:w-auto px-5 sm:px-7 py-3 sm:py-3.5 text-sm font-semibold flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>{heroContent.secondaryCtaText}</span>
               </button>
 
               <button
                 onClick={onOpenAIGenerator}
-                className="btn-outline px-4 py-3.5 text-xs font-mono font-bold flex items-center justify-center gap-2 cursor-pointer"
+                className="btn-outline w-full sm:w-auto px-4 py-3 sm:py-3.5 text-xs font-mono font-bold flex items-center justify-center gap-2 cursor-pointer"
               >
                 <Code2 className="w-4 h-4 text-cyan-400" />
                 <span>{heroContent.tertiaryCtaText}</span>
@@ -88,14 +88,14 @@ export const Hero: React.FC<HeroProps> = ({ onStartConsultation, onOpenAIGenerat
             </div>
 
             {/* Hero Micro Copy Statements */}
-            <div className="pt-6 grid grid-cols-2 gap-3 text-xs text-slate-300 font-mono border-t border-slate-800/80">
+            <div className="pt-5 sm:pt-6 grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 text-xs text-slate-300 font-mono border-t border-slate-800/80">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span>{heroContent.checkItem1 || 'Custom-built for your business.'}</span>
+                <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400 shrink-0" />
+                <span className="truncate sm:whitespace-normal">{heroContent.checkItem1 || 'Custom-built for your business.'}</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span>{heroContent.checkItem2 || 'From idea to production-ready application.'}</span>
+                <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400 shrink-0" />
+                <span className="truncate sm:whitespace-normal">{heroContent.checkItem2 || 'From idea to production-ready application.'}</span>
               </div>
             </div>
 
